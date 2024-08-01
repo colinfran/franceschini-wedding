@@ -79,7 +79,7 @@ const Page: FC = () => {
           <AccordionContent>
             We are registered at Zola. Your presence at our wedding is the best gift, but if
             you&apos;d like to contribute, you can find our registry{" "}
-            <Link href="/registry">here</Link>.
+            <Link className="text-blue-800 hover:underline" href="/registry">here</Link>.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-10">
