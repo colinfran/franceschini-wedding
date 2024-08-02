@@ -17,13 +17,13 @@ const WeddingParty: FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Bridesmaid 1"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -32,13 +32,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Bridesmaid 2"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -47,13 +47,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Bridesmaid 3"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -62,13 +62,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Bridesmaid 4"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -90,13 +90,13 @@ const WeddingParty: FC = () => {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 1"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -105,13 +105,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 2"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -120,13 +120,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 3"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -135,13 +135,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 4"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -150,13 +150,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 5"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -165,13 +165,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 6"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
@@ -180,13 +180,13 @@ const WeddingParty: FC = () => {
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
-              <div className="size-24 overflow-hidden rounded-full">
+              <div className="size-32 overflow-hidden rounded-full">
                 <img
                   alt="Groomsman 7"
                   className="object-cover"
-                  height={96}
+                  height={128}
                   src="https://generated.vusercontent.net/placeholder.svg"
-                  width={96}
+                  width={128}
                 />
               </div>
               <div className="text-center">
