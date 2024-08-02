@@ -31,11 +31,11 @@ const Page: FC = () => {
           </div>
         </div>
       )}
-      <Card className={`ZolaRegistry w-full ${loading ? "invisible" : "visible"}`}>
+      <div className={`ZolaRegistry w-full ${loading ? "invisible" : "visible"}`}>
         <a className="zola-registry-embed" data-registry-key={registryKey} href={url}>
           Our Zola Wedding Registry
         </a>
-      </Card>
+      </div>
     </div>
   )
 }
