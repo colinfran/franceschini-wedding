@@ -1,5 +1,4 @@
 "use client"
-import { Card } from "@/components/ui/card"
 import React, { FC, useEffect, useState } from "react"
 
 const Page: FC = () => {
