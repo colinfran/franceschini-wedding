@@ -11,7 +11,8 @@ const WeddingParty: FC = () => {
               Meet the Bridesmaids
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              These are the wonderful women who will be supporting the bride throughout her wedding day.
+              These are the wonderful women who will be supporting the bride throughout her wedding
+              day.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -83,7 +84,8 @@ const WeddingParty: FC = () => {
               Meet the Groomsmen
             </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              These are the fantastic men who will be standing by the groom&apos;s side as he ties the knot.
+              These are the fantastic men who will be standing by the groom&apos;s side as he ties
+              the knot.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
