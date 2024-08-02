@@ -19,7 +19,7 @@ const Countdown: FC<Props> = ({ targetDate }) => {
 
   return (
     <div>
-      <div className="grid items-center gap-4 grid-cols-1 md:grid-cols-5">
+      <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-5">
         <div className="flex flex-col items-center">
           <div className="text-4xl" suppressHydrationWarning={true}>
             {timeLeft.months}
