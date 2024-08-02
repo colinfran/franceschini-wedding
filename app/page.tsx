@@ -4,8 +4,8 @@ import Countdown from "@/components/Countdown"
 
 const Page: FC = () => {
   return (
-    <div className="flex justify-center">
-      <div className="relative flex items-center">
+    <div className="grid grid-cols-3">
+      <div className="relative flex items-center justify-end">
         <Image
           alt="profile"
           className="-scale-x-100"
@@ -20,7 +20,7 @@ const Page: FC = () => {
       <div className="my-6 flex flex-col items-center justify-center">
         <Countdown targetDate="7-4-2025" />
       </div>
-      <div className="relative flex items-center">
+      <div className="relative flex items-center justify-start">
         <Image
           alt="profile"
           height={0}

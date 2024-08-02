@@ -19,26 +19,36 @@ const Countdown: FC<Props> = ({ targetDate }) => {
 
   return (
     <div>
-      <div className="flex flex-col gap-4 md:flex-row">
+      <div className="grid items-center gap-4 grid-cols-1 md:grid-cols-5">
         <div className="flex flex-col items-center">
-          <div suppressHydrationWarning={true}>{timeLeft.months}</div>
+          <div className="text-4xl" suppressHydrationWarning={true}>
+            {timeLeft.months}
+          </div>
           <div>Months</div>
         </div>
         <div className="flex flex-col items-center">
-          <div suppressHydrationWarning={true}>{timeLeft.days}</div>
+          <div className="text-4xl" suppressHydrationWarning={true}>
+            {timeLeft.days}
+          </div>
           <div>Days</div>
         </div>
         <div className="flex flex-col items-center">
-          <div suppressHydrationWarning={true}>{timeLeft.hours}</div>
+          <div className="text-4xl" suppressHydrationWarning={true}>
+            {timeLeft.hours}
+          </div>
           <div>Hours</div>
         </div>
         <div className="flex flex-col items-center">
-          <div suppressHydrationWarning={true}>{timeLeft.minutes}</div>
-          <div>Minutes</div>
+          <div className="text-4xl" suppressHydrationWarning={true}>
+            {timeLeft.minutes}
+          </div>
+          <div>Mins</div>
         </div>
         <div className="flex flex-col items-center">
-          <div suppressHydrationWarning={true}>{timeLeft.seconds}</div>
-          <div>Seconds</div>
+          <div className="text-4xl" suppressHydrationWarning={true}>
+            {timeLeft.seconds}
+          </div>
+          <div>Secs</div>
         </div>
       </div>
     </div>
