@@ -7,7 +7,7 @@ const Page: FC = () => {
   useEffect(() => {
     const script = document.createElement("script")
 
-    script.src = "https://widget.zola.com/js/widget.js"
+    script.src = "https://widget.zola.com/js/widget.js?v=2"
     script.async = true
     script.onload = () => {
       setTimeout(() => {
