@@ -43,7 +43,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">Teffy Sanchez Holguin</h3>
-                <p className="text-muted-foreground">BFF</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -101,7 +101,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -116,7 +116,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -131,7 +131,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -146,7 +146,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -161,7 +161,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -176,7 +176,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -191,7 +191,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">????? ??????????</p>
+                <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
           </div>
