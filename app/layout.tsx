@@ -4,17 +4,13 @@ import "./globals.css"
 import React from "react"
 import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/Header"
+import Favicon from "@/components/Favicon"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Colin & Orne",
   description: "Colin and Orne are getting married!",
-  icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
-  },
 }
 
 type RootLayoutProps = {
@@ -24,6 +20,9 @@ type RootLayoutProps = {
 const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
   return (
     <html lang="en">
+      <head>
+        <Favicon />
+      </head>
       <body className={inter.className}>
         <div>
           <Header />
