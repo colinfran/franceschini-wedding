@@ -101,7 +101,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">Friend</p>
+                <p className="text-muted-foreground">Best Man</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
