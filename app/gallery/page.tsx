@@ -10,7 +10,13 @@ const Page: FC = () => {
   useEffect(() => {
     const getData = async (): Promise<void> => {
       try {
-        const val = await fetch("/api/get-images")
+        const val = await fetch("/api/get-images", {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        })
         const json = await val.json()
         console.log(json)
         setLoading(false)
