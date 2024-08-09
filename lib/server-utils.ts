@@ -17,20 +17,17 @@ export const getRegistryData = async (): Promise<RegistryItem[]> => {
     },
   )
   const data: DataResponse = await response.json()
-  // const newData = { ...data }
-  // const updatedCollection = await Promise.all(
-  //   data.default_collection.map(async (item: any, index: number) => {
-  //     const imageUrl = item.images[0].medium // Assuming the image URL is stored here
-  //     const imageResponse = await fetch(imageUrl)
-  //     const buffer = await imageResponse.arrayBuffer()
-  //     const { base64 } = await getPlaiceholder(Buffer.from(buffer))
-
-  //     newData.default_collection[index].images[0].blur = base64
-
-  //     return newData.default_collection[index]
-  //   }),
-  // )
-  // return updatedCollection
-
   return data.default_collection
+}
+
+export const getShoppingCart = async (): Promise<RegistryItem[]> => {
+  const response = await fetch("https://www.zola.com/website-nav/web-api/v1/cart", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+  })
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const data: any = await response.json()
+  return data
 }

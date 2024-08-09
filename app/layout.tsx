@@ -4,6 +4,9 @@ import "./globals.css"
 import React from "react"
 import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/Header"
+import { ModalProvider } from "@/components/Modals/context"
+import Modals from "@/components/Modals"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -35,11 +38,18 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
         <link href="/manifest.json" rel="manifest" />
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
+        <Script
+          src="https://d1tntvpcrzvon2.cloudfront.net/vnassets/static/js/legacyNav.d3c1298a.js"
+          defer
+        ></Script>
       </head>
       <body className={inter.className}>
         <div>
-          <Header />
-          <div>{children}</div>
+          <ModalProvider>
+            <Header />
+            <div>{children}</div>
+            <Modals />
+          </ModalProvider>
         </div>
         <Analytics />
       </body>

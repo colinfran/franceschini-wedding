@@ -1,12 +1,11 @@
 import React, { FC } from "react"
-import { Gift, ExternalLink } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import Image from "next/image"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import Imager from "@/components/Image"
 import { getRegistryData } from "@/lib/server-utils"
 import { RegistryItem } from "@/types"
+import ProductCard from "@/components/ProductCard"
 
 const Page: FC = async () => {
   const registryData: RegistryItem[] = await getRegistryData()
@@ -31,40 +30,11 @@ const Page: FC = async () => {
           height={200}
           src="https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/logos/zola-logomark-marine.png"
           width={200}
+          priority
         />
       </div>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {registryData?.map((item: RegistryItem) => (
-          <Card key={item.item_id}>
-            <CardHeader className="p-0">
-              <Imager item={item} />
-            </CardHeader>
-            <CardContent className="pb-0 pt-4">
-              <h3 className="ellipse two-lines min-h-[56px] text-center text-lg font-semibold">
-                {item.name}
-              </h3>
-            </CardContent>
-            <CardFooter className="flex flex-col pb-6">
-              <Button className="mt-4 w-full rounded-md p-2" variant="outline" asChild>
-                <Link
-                  href={`https://www.zola.com/registry/collection-item/${item.item_id}`}
-                  target="_blank"
-                >
-                  <Gift className="mr-2 size-4" />
-                  {item.button_cta || "Contribute"}
-                </Link>
-              </Button>
-              {
-                <h4
-                  className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
-                >
-                  Still needs:{" "}
-                  {!item.contributions.hide_contributions && item.contributions.still_needs}
-                </h4>
-              }
-            </CardFooter>
-          </Card>
-        ))}
+        {registryData?.map((item: RegistryItem) => <ProductCard item={item} key={item.item_id} />)}
       </div>
     </div>
   )

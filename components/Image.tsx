@@ -11,7 +11,7 @@ const Imager: FC<Props> = ({ item }) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Image
         alt={item.name}
         className={`h-48 w-full ${!isLoaded ? "invisible" : "visible"}`}

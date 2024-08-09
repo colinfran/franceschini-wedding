@@ -2,6 +2,8 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React, { FC, SVGProps, useState } from "react"
+import { ShoppingCart } from "lucide-react"
+import { useModal } from "./Modals/context"
 
 const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -26,12 +28,20 @@ const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 
 export const MobileNav: FC = () => {
   const [open, setOpen] = useState(false)
+  const { triggerModal } = useModal()
 
   const handleLinkClick = (): void => {
     setOpen(false)
   }
   return (
-    <header className="flex h-16 w-full items-center justify-between bg-background px-4 md:px-6">
+    <header className="flex w-full items-center justify-between bg-background pr-4 md:pr-6">
+      <div>
+        <Button className="mr-4" size="icon" variant="outline" onClick={() => triggerModal("cart")}>
+          <div>
+            <ShoppingCart />
+          </div>
+        </Button>
+      </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild>
           <Button className="lg:hidden" size="icon" variant="outline">
@@ -40,7 +50,7 @@ export const MobileNav: FC = () => {
           </Button>
         </SheetTrigger>
         <SheetContent className="w-full max-w-xs bg-background p-6" side="right">
-          <div className="page-title my-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
+          <div className="page-title py-12 pt-5 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
             <Link href="/">Colin & Ornella</Link>
           </div>
           <nav className="grid gap-4">
