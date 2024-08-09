@@ -2,6 +2,7 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React, { FC, SVGProps, useState } from "react"
+import { headerLinks } from "./Header"
 
 const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -44,46 +45,17 @@ export const MobileNav: FC = () => {
             <Link href="/">Colin & Ornella</Link>
           </div>
           <nav className="grid gap-4">
-            <Link
-              className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
-              href="/"
-              prefetch={false}
-              onClick={handleLinkClick}
-            >
-              Home
-            </Link>
-            <Link
-              className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
-              href="/registry"
-              prefetch={false}
-              onClick={handleLinkClick}
-            >
-              Registry
-            </Link>
-            <Link
-              className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
-              href="/wedding-party"
-              prefetch={false}
-              onClick={handleLinkClick}
-            >
-              Wedding Party
-            </Link>
-            <Link
-              className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
-              href="/gallery"
-              prefetch={false}
-              onClick={handleLinkClick}
-            >
-              Gallery
-            </Link>
-            <Link
-              className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
-              href="/faqs"
-              prefetch={false}
-              onClick={handleLinkClick}
-            >
-              FAQs
-            </Link>
+            {headerLinks.map((item) => (
+              <Link
+                className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
+                href={item.path}
+                key={item.path}
+                prefetch={false}
+                onClick={handleLinkClick}
+              >
+                {item.title}
+              </Link>
+            ))}
           </nav>
         </SheetContent>
       </Sheet>
