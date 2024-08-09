@@ -62,7 +62,10 @@ const Page: FC = async () => {
             </CardContent>
             <CardFooter className="flex flex-col pb-6">
               <Button className="mt-4 w-full rounded-md p-2" variant="outline" asChild>
-                <Link target="_blank" href={`https://www.zola.com/registry/collection-item/${item.item_id}`}>
+                <Link
+                  href={`https://www.zola.com/registry/collection-item/${item.item_id}`}
+                  target="_blank"
+                >
                   <Gift className="mr-2 size-4" />
                   {item.button_cta || "Contribute"}
                 </Link>

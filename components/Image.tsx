@@ -20,8 +20,8 @@ const Imager: FC<Props> = ({ item }) => {
         src={item.images[0].medium}
         style={{ width: "100%", height: "auto" }} // optional
         width={0}
-        onLoad={() => setIsLoaded(true)}
         priority
+        onLoad={() => setIsLoaded(true)}
       />
       {!isLoaded && (
         <div className="absolute inset-0 size-full bg-white">
