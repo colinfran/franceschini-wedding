@@ -15,7 +15,7 @@ const Page: FC = async () => {
   } catch (error) {
     console.error("Failed to fetch registry data:", error)
   }
-  
+
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
