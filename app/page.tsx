@@ -4,7 +4,7 @@ import Countdown from "@/components/Countdown"
 
 const Page: FC = () => {
   return (
-    <div className="grid grid-cols-3">
+    <div className="m-auto grid max-w-[1480px] grid-cols-3">
       <div className="relative flex items-center justify-end">
         <Image
           alt="profile"
