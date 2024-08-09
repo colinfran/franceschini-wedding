@@ -1,6 +1,6 @@
 import { DataResponse, RegistryItem } from "@/types"
 
-const REGISTRY_KEY = process.env.REGISTRY_KEY!
+const registry_key = process.env.REGISTRY_LIST_KEY!
 
 export const getRegistryData = async (): Promise<RegistryItem[]> => {
   const response = await fetch(
@@ -11,7 +11,7 @@ export const getRegistryData = async (): Promise<RegistryItem[]> => {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
-        registry_key: REGISTRY_KEY,
+        registry_key,
         flattened_view: "true",
       }),
     },
