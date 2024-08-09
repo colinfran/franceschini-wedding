@@ -7,23 +7,6 @@ import Link from "next/link"
 import Imager from "@/components/Image"
 import { getRegistryData } from "@/lib/server-utils"
 
-export interface RegistryItem {
-  object_id: string
-  item_id: string
-  name: string
-  type: string
-  price: number | null
-  images: Array<{
-    medium: string
-    blur: string
-  }>
-  contributions: {
-    still_needs: string
-    hide_contributions: boolean
-  }
-  button_cta: string
-}
-
 const Page: FC = async () => {
   const registryData = await getRegistryData()
 
