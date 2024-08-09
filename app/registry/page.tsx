@@ -16,6 +16,14 @@ const Page: FC = async () => {
     console.error("Failed to fetch registry data:", error)
   }
 
+  if (!registryData || registryData.length === 0) {
+    return (
+      <div className="mx-auto max-w-[1450px] p-4 text-center">
+        <h2>No items found in the registry.</h2>
+      </div>
+    )
+  }
+
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
