@@ -9,20 +9,7 @@ import { getRegistryData } from "@/lib/server-utils"
 import { RegistryItem } from "@/types"
 
 const Page: FC = async () => {
-  let registryData: RegistryItem[] = []
-  try {
-    registryData = await getRegistryData()
-  } catch (error) {
-    console.error("Failed to fetch registry data:", error)
-  }
-
-  if (!registryData || registryData.length === 0) {
-    return (
-      <div className="mx-auto max-w-[1450px] p-4 text-center">
-        <h2>No items found in the registry.</h2>
-      </div>
-    )
-  }
+  const registryData: RegistryItem[] = await getRegistryData()
 
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
@@ -47,7 +34,7 @@ const Page: FC = async () => {
         />
       </div>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {registryData.map((item: RegistryItem) => (
+        {registryData?.map((item: RegistryItem) => (
           <Card key={item.item_id}>
             <CardHeader className="p-0">
               <Imager item={item} />
