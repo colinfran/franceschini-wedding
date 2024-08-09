@@ -1,37 +1,83 @@
-"use client"
-import React, { FC, useEffect, useState } from "react"
+import React, { FC } from "react"
+import { Gift, ExternalLink } from "lucide-react"
+import Image from "next/image"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import Imager from "@/components/Image"
+import { getRegistryData } from "@/lib/server-utils"
 
-const Page: FC = () => {
-  const [loading, setLoading] = useState(true)
+export interface RegistryItem {
+  object_id: string
+  item_id: string
+  name: string
+  type: string
+  price: number | null
+  images: Array<{
+    medium: string
+    blur: string
+  }>
+  contributions: {
+    still_needs: string
+    hide_contributions: boolean
+  }
+  button_cta: string
+}
 
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://widget.zola.com/js/widget.js?v=2"
-    script.async = true
-    script.onload = () => {
-      setTimeout(() => {
-        setLoading(false)
-      }, 500)
-    }
-    document.body.appendChild(script)
-  }, [])
-
-  const url = "www.zola.com/registry/colinandornella"
-  const registryKey = "colinandornella"
+const Page: FC = async () => {
+  const registryData = await getRegistryData()
 
   return (
-    <div className="m-10 flex flex-col justify-center text-center">
-      {loading && (
-        <div>
-          <div className="lds-heart">
-            <div />
-          </div>
+    <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
+      <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
+        <div className="m-auto max-w-[736px]">
+          <Link
+            className="flex h-10 w-full flex-row items-center justify-center uppercase"
+            href="https://www.zola.com/registry/colinandornella"
+            target="_blank"
+          >
+            <ExternalLink className="mr-2 size-4" /> See our full Zola registry
+          </Link>
         </div>
-      )}
-      <div className={`ZolaRegistry w-full ${loading ? "invisible" : "visible"}`}>
-        <a className="zola-registry-embed" data-registry-key={registryKey} href={url}>
-          Our Zola Wedding Registry
-        </a>
+      </Button>
+      <div className="my-4 flex w-full justify-center">
+        <Image
+          alt="Wedding Registry Brands - Zola"
+          className="brightness-0 invert-0"
+          height={200}
+          src="https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/logos/zola-logomark-marine.png"
+          width={200}
+        />
+      </div>
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {registryData.map((item) => (
+          <Card key={item.item_id}>
+            <CardHeader className="p-0">
+              <Imager item={item} />
+            </CardHeader>
+            <CardContent className="pb-0 pt-4">
+              <h3 className="ellipse two-lines min-h-[56px] text-center text-lg font-semibold">
+                {item.name}
+              </h3>
+            </CardContent>
+            <CardFooter className="flex flex-col pb-6">
+              <Button className="mt-4 w-full rounded-md p-2" variant="outline" asChild>
+                <Link target="_blank" href={`https://www.zola.com/registry/collection-item/${item.item_id}`}>
+                  <Gift className="mr-2 size-4" />
+                  {item.button_cta || "Contribute"}
+                </Link>
+              </Button>
+              {
+                <h4
+                  className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
+                >
+                  Still needs:{" "}
+                  {!item.contributions.hide_contributions && item.contributions.still_needs}
+                </h4>
+              }
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </div>
   )

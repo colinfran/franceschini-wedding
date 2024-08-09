@@ -16,6 +16,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.ibb.co",
       },
+      {
+        protocol: "https",
+        hostname: "images.zola.com",
+      },
+      {
+        protocol: "https",
+        hostname: "*.cloudfront.net"
+      }
     ],
   },
 };
