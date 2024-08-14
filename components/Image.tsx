@@ -23,9 +23,7 @@ const Imager: FC<Props> = ({ item }) => {
         priority
         onLoad={() => setIsLoaded(true)}
       />
-      {!isLoaded && (
-        <div className="absolute inset-0 size-full bg-gray-300 animate-pulse" />
-      )}
+      {!isLoaded && <div className="absolute inset-0 size-full animate-pulse bg-gray-300" />}
     </div>
   )
 }

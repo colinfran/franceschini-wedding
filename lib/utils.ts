@@ -38,5 +38,5 @@ export const calculateTimeLeft = (targetDate: string): CalculateProps => {
 }
 
 export const wait = (milliseconds: number): Promise<void> => {
-  return new Promise(resolve => setTimeout(resolve, milliseconds));
+  return new Promise((resolve) => setTimeout(resolve, milliseconds))
 }
