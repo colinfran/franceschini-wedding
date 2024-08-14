@@ -28,7 +28,7 @@ const Page: FC = async () => {
         <Image
           alt="Wedding Registry Brands - Zola"
           className="brightness-0 invert-0"
-          height={200}
+          height={30.5}
           src="https://d1tntvpcrzvon2.cloudfront.net/static-assets/images/logos/zola-logomark-marine.png"
           width={200}
         />

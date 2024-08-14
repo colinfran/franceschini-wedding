@@ -7,6 +7,11 @@ const nextConfig = {
         destination: "https://www.zola.com/wedding/colinandornella/rsvp",
         permanent: true,
       },
+      {
+        source: "/api/fetch",
+        destination: "/api/cron",
+        permanent: true,
+      }
     ]
   },
   reactStrictMode: false,
