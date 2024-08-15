@@ -33,7 +33,7 @@ const Page: FC = () => {
           />
         </div>
       </div>
-      <div className="m-auto mt-20 max-w-[1000px]">
+      <div className="m-auto my-20 max-w-[1000px]">
         <iframe
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           frameBorder="0"
