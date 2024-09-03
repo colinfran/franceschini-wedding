@@ -10,7 +10,6 @@ import { RegistryItem } from "@/types"
 
 const Page: FC = async () => {
   const registryData: RegistryItem[] = await getRegistryData()
-  console.log(registryData)
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
@@ -35,7 +34,7 @@ const Page: FC = async () => {
       </div>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {registryData?.map((item: RegistryItem) => (
-          <Card key={item.item_id}>
+          <Card key={item.item_id} className={`relative ${item.contributions.fulfilled ? "pointer-events-none":""}`}> 
             <CardHeader className="p-0">
               <Imager item={item} />
             </CardHeader>
@@ -54,20 +53,29 @@ const Page: FC = async () => {
                   {item.button_cta || "Contribute"}
                 </Link>
               </Button>
-              {
-                !item.contributions.hide_contributions && item.contributions.still_needs === "1" ? (
-                  <h4 className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`} >
-                    Price:{" $"}
-                    {item.price}
-                  </h4>
-                ) : (
-                <h4 className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`} >
+              {!item.contributions.hide_contributions && item.contributions.still_needs === "1" ? (
+                <h4
+                  className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
+                >
+                  Price:{" $"}
+                  {item.price}
+                </h4>
+              ) : (
+                <h4
+                  className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
+                >
                   Still needs:{" "}
                   {!item.contributions.hide_contributions && item.contributions.still_needs}
                 </h4>
-                )
-              }
+              )}
             </CardFooter>
+            {
+              item.contributions.fulfilled && (
+                <div className="absolute inset-0 bg-[rgba(82,82,82,0.75)]">
+                  <span className="text-white flex justify-center items-center w-full h-full text-center">Item has already been purchased.</span>
+                </div>
+              )
+            }
           </Card>
         ))}
       </div>
