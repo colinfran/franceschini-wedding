@@ -32,7 +32,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "c.media-amazon.com"
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "ucarecdn.com"
+      },
     ],
   },
 };
