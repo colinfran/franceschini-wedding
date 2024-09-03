@@ -10,7 +10,7 @@ import { RegistryItem } from "@/types"
 
 const Page: FC = async () => {
   const registryData: RegistryItem[] = await getRegistryData()
-
+  console.log(registryData)
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
@@ -55,12 +55,17 @@ const Page: FC = async () => {
                 </Link>
               </Button>
               {
-                <h4
-                  className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
-                >
+                !item.contributions.hide_contributions && item.contributions.still_needs === "1" ? (
+                  <h4 className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`} >
+                    Price:{" $"}
+                    {item.price}
+                  </h4>
+                ) : (
+                <h4 className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`} >
                   Still needs:{" "}
                   {!item.contributions.hide_contributions && item.contributions.still_needs}
                 </h4>
+                )
               }
             </CardFooter>
           </Card>
