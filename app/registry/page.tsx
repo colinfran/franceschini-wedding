@@ -34,7 +34,10 @@ const Page: FC = async () => {
       </div>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {registryData?.map((item: RegistryItem) => (
-          <Card key={item.item_id} className={`relative ${item.contributions.fulfilled ? "pointer-events-none":""}`}> 
+          <Card
+            className={`relative ${item.contributions.fulfilled ? "pointer-events-none" : ""}`}
+            key={item.item_id}
+          >
             <CardHeader className="p-0">
               <Imager item={item} />
             </CardHeader>
@@ -69,13 +72,13 @@ const Page: FC = async () => {
                 </h4>
               )}
             </CardFooter>
-            {
-              item.contributions.fulfilled && (
-                <div className="absolute inset-0 bg-[rgba(82,82,82,0.75)]">
-                  <span className="text-white flex justify-center items-center w-full h-full text-center">Item has already been purchased.</span>
-                </div>
-              )
-            }
+            {item.contributions.fulfilled && (
+              <div className="absolute inset-0 bg-[rgba(82,82,82,0.75)]">
+                <span className="flex size-full items-center justify-center text-center text-white">
+                  Item has already been purchased.
+                </span>
+              </div>
+            )}
           </Card>
         ))}
       </div>
