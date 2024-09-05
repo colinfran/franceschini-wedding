@@ -170,13 +170,13 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 6"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/kGrpBJb/tom.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">Friend</p>
+                <h3 className="text-lg font-semibold">Tom Franceschini</h3>
+                <p className="text-muted-foreground">Brother</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -185,13 +185,13 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 7"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/4sNS77g/john.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">Friend</p>
+                <h3 className="text-lg font-semibold">John Franceschini</h3>
+                <p className="text-muted-foreground">Brother</p>
               </div>
             </div>
           </div>
