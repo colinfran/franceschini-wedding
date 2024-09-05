@@ -3,8 +3,6 @@
 
 Welcome to franceschini.wedding. This is the official website for Colin and Orne’s wedding. We’re excited to share our journey as we plan for our special day, and this site will be your go-to spot for all the details. From venue information and event schedules to RSVP options and registry links, you’ll find everything you need to celebrate with us.
 
-We’re thrilled to have you join us in this joyful occasion and look forward to creating unforgettable memories together!
-
 [![React](https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
 [![Next JS](https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
