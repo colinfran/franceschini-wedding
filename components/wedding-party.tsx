@@ -27,7 +27,7 @@ const WeddingParty: FC = () => {
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Courtney Lane-Donovan</h3>
                 <p className="text-muted-foreground">Maid of Honor</p>
               </div>
             </div>
