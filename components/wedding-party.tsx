@@ -28,7 +28,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">Courtney Lane-Donovan</h3>
-                <p className="text-muted-foreground">Maid of Honor</p>
+                <p className="text-muted-foreground">Matron of Honor</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
@@ -37,7 +37,7 @@ const WeddingParty: FC = () => {
                   alt="Bridesmaid 2"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/0y4WbG3/teffy.png"
                   width={128}
                 />
               </div>
