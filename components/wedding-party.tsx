@@ -22,7 +22,7 @@ const WeddingParty: FC = () => {
                   alt="Bridesmaid 1"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/rkv5PrY/courtney.png"
                   width={128}
                 />
               </div>
