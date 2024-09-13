@@ -117,11 +117,9 @@ const Page: FC = () => {
               <SelectTrigger className="text-base">
                 <SelectValue placeholder="Select attendance" />
               </SelectTrigger>
-              <SelectContent 
-                ref={(ref) =>
-                  ref?.addEventListener('touchend', (e) => e.preventDefault())
-                }
+              <SelectContent
                 className="text-base"
+                ref={(ref) => ref?.addEventListener("touchend", (e) => e.preventDefault())}
               >
                 <SelectItem value="yes">Yes, I am attending.</SelectItem>
                 <SelectItem value="no">No, I am unable to attend.</SelectItem>
