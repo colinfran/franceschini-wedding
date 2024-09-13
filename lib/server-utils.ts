@@ -20,7 +20,7 @@ export const getRegistryData = async (): Promise<RegistryItem[]> => {
   return data.default_collection
 }
 
-export const findAssociatedAttendees = (guestList: GuestList, name: string): Guest => {
+export const findAssociatedAttendees = (guestList: GuestList, name: string): Guest | null => {
   for (const guest of guestList.guests) {
     if (guest.attendees.includes(name)) {
       return {
