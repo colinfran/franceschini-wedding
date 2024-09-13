@@ -11,6 +11,10 @@ export const headerLinks = [
     path: "/",
   },
   {
+    title: "RSVP",
+    path: "/rsvp",
+  },
+  {
     title: "Registry",
     path: "/registry",
   },

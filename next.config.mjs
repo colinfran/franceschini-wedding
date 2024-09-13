@@ -3,11 +3,6 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/rsvp",
-        destination: "https://www.zola.com/wedding/colinandornella/rsvp",
-        permanent: true,
-      },
-      {
         source: "/api/fetch",
         destination: "/api/cron",
         permanent: true,
