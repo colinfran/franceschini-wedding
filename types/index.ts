@@ -91,5 +91,15 @@ type DataResponse = {
   default_collection: RegistryItem[]
 }
 
+type Guest = {
+  _id: string;
+  attendees: string[];
+  willAttend: string;
+};
 
-export type { ResponseData, SuccessErrorResponse, CalculateProps, RegistryItem, DataResponse }
+type GuestList = {
+  guests: Guest[];
+};
+
+
+export type { ResponseData, SuccessErrorResponse, CalculateProps, RegistryItem, DataResponse, GuestList, Guest }

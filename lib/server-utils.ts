@@ -1,4 +1,4 @@
-import { DataResponse, RegistryItem } from "@/types"
+import { DataResponse, Guest, GuestList, RegistryItem } from "@/types"
 
 const registry_key = process.env.REGISTRY_LIST_KEY!
 
@@ -18,4 +18,18 @@ export const getRegistryData = async (): Promise<RegistryItem[]> => {
   )
   const data: DataResponse = await response.json()
   return data.default_collection
+}
+
+export const findAssociatedAttendees = (guestList: GuestList, name: string): Guest => {
+  for (const guest of guestList.guests) {
+    if (guest.attendees.includes(name)) {
+      return {
+        _id: guest._id,
+        attendees: guest.attendees,
+        willAttend: guest.willAttend,
+      }
+    }
+  }
+
+  return null // Name not found
 }
