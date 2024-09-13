@@ -13,11 +13,12 @@ import { getAttendees } from "@/db/getAttendees"
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
     const attendees = await getAttendees()
-    const formattedData = attendees.guests.map((item) => [
-      item._id,
+    const dataRows = attendees.guests.map((item) => [
       item.attendees.join(", "),
       item.willAttend,
     ])
+    const headers = ["Names", "Will Attend"]
+    const formattedData = [headers, ...dataRows]
     return NextResponse.json(formattedData)
   } catch (err) {
     console.error(err)
