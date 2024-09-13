@@ -1,0 +1,24 @@
+import { NextRequest, NextResponse } from "next/server"
+import { findAssociatedAttendees } from "@/lib/server-utils"
+import { getAttendees } from "@/db/getAttendees"
+
+/**
+ * Handles GET requests to the '/api/rsvp/update-spreadsheet' endpoint.
+ * Retrieves the list of attendees from the database and formats it.
+ * @param {NextRequest} request - The incoming request object, expected to contain a JSON payload with the name to search for.
+ * @returns {Promise<NextResponse>} A Promise that resolves to a JSON response containing:
+ *   - `formattedData`: An array of arrays, each containing the attendee's ID, list of attendees, and attendance status.
+ *   - `error`: An object indicating an error if the operation fails.
+ */
+
+export async function GET(request: NextRequest): Promise<NextResponse> {
+  try {
+    const { name } = await request.json()
+    const attendees = await getAttendees()
+    const formattedData = attendees.guests.map(item => [item._id, item.attendees, item.willAttend]);
+    return NextResponse.json(formattedData)
+  } catch (err) {
+    console.error(err)
+    return NextResponse.json({ error: true })
+  }
+}
