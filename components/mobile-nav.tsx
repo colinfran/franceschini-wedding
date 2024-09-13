@@ -41,8 +41,12 @@ export const MobileNav: FC = () => {
           </Button>
         </SheetTrigger>
         <SheetContent className="w-full max-w-xs bg-background p-6" side="right">
-          <div className="page-title my-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
+          <div className="page-title mt-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
             <Link href="/">Colin & Ornella</Link>
+          </div>
+          <div className="flex flex-col text-center page-title mt-6 mb-12 text-center leading-[1.43] tracking-[normal]">
+            <div className="text-xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">July 13th, 2025</div>
+            <div className="text-lg">Stonetree Estate</div>
           </div>
           <nav className="grid gap-4">
             {headerLinks.map((item) => (
