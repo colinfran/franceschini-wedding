@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://franceschini.wedding/$1",
+      "permanent": true
+    }
+  ],
   "crons": [{
     "path": "/api/cron",
     "schedule": "0 0 * * *"
