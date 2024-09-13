@@ -12,7 +12,6 @@ import { getAttendees } from "@/db/getAttendees"
 
 export async function GET(request: NextRequest): Promise<NextResponse> {
   try {
-    const { name } = await request.json()
     const attendees = await getAttendees()
     const formattedData = attendees.guests.map((item) => [
       item._id,
