@@ -15,7 +15,7 @@ export async function GET(request: NextRequest): Promise<NextResponse> {
     const attendees = await getAttendees()
     const formattedData = attendees.guests.map((item) => [
       item._id,
-      item.attendees,
+      item.attendees.join(', '),
       item.willAttend,
     ])
     return NextResponse.json(formattedData)
