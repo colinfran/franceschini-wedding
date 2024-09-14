@@ -1,7 +1,7 @@
 "use client"
 
 import React, { FC, useEffect, useState } from "react"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { MobileNav } from "@/components/mobile-nav"
 import Link from "next/link"
 
@@ -35,6 +35,7 @@ export const headerLinks = [
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
   const [width, setWidth] = useState<number>(0)
 
   const handleWindowSizeChange = (): void => {
@@ -72,6 +73,12 @@ const Header: FC = () => {
             className={`${boldPath(item.path)} block px-2 py-1 text-black hover:underline md:py-0`}
             href={item.path}
             key={item.path}
+            onClick={() => {
+              if (pathname === item.path) {
+                router.push(window.location.href)
+                router.refresh()
+              }
+            }}
           >
             {item.title}
           </Link>
