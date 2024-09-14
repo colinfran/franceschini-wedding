@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React, { FC, SVGProps, useState } from "react"
 import { headerLinks } from "./Header"
+import { usePathname, useRouter } from "next/navigation"
 
 const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -26,9 +27,15 @@ const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 }
 
 export const MobileNav: FC = () => {
+  const router = useRouter()
+  const pathname = usePathname()
+
   const [open, setOpen] = useState(false)
 
-  const handleLinkClick = (): void => {
+  const handleLinkClick = (path: string): void => {
+    if (pathname === path){
+      router.refresh();
+    }
     setOpen(false)
   }
   return (
@@ -57,7 +64,7 @@ export const MobileNav: FC = () => {
                 href={item.path}
                 key={item.path}
                 prefetch={false}
-                onClick={handleLinkClick}
+                onClick={()=> handleLinkClick(item.path)}
               >
                 {item.title}
               </Link>
