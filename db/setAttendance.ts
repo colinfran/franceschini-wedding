@@ -1,5 +1,6 @@
 import { findAssociatedAttendees } from "@/lib/server-utils"
 import { Guest, GuestList, ResponseData } from "@/types"
+import moment from "moment"
 import { MongoClient, ObjectId } from "mongodb"
 
 const uri = process.env.MONGODB_URI!
@@ -19,7 +20,10 @@ export const setAttendance = async (id: string, willAttend: string): Promise<boo
     const rsvpCollection = db.collection<any>("rsvp")
     const result = await rsvpCollection.updateOne(
       { _id: new ObjectId(id) },
-      { $set: { willAttend } },
+      { $set: { 
+        willAttend,
+        updatedAt: moment().format('LLL')
+       } },
       { upsert: false }
     )
     return result.matchedCount > 0
