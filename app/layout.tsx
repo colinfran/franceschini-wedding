@@ -11,8 +11,7 @@ const gaId = process.env.NEXT_PUBLIC_MEASUREMENT_ID!
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Colin & Orne",
-  description: "Colin and Orne are getting married!",
+  title: "Colin & Orne Wedding",
 }
 
 type RootLayoutProps = {
