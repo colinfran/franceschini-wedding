@@ -61,9 +61,9 @@ const Header: FC = () => {
 
   return (
     <div className={" relative mb-8"}>
-      <div className="page-title my-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
+      <h1 className="page-title my-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
         <Link href="/">Colin & Ornella</Link>
-      </div>
+      </h1>
       <nav
         className={`hidden items-center justify-center gap-4 md:flex ${isOpen ? "block" : "hidden"}`}
       >

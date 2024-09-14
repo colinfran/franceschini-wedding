@@ -40,14 +40,24 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
 
         {/* SEO Meta Tags */}
-        <meta content="Colin & Colin are getting married!" name="description" />
+        <meta
+          content="Join Colin and Orne on July 13, 2025, at 5:00 PM for their wedding at Stonetree Estate in Novato, CA. Discover event details, location, and more about their special day."
+          name="description"
+        />
+        <meta
+          content="Colin and Orne wedding, wedding at Stonetree Estate, July 13 2025 wedding, Novato CA wedding, wedding ceremony, wedding reception, California weddings, Stonetree Estate venue, Colin and Orne's special day, wedding event details, wedding guest information, wedding venue Stonetree Estate, Colin Franceschini and Ornella wedding, wedding in Novato California, wedding celebration, wedding planning, wedding guests, wedding schedule, love and marriage, wedding party, outdoor wedding, wedding date July 13, Stonetree Estate wedding venue, beautiful wedding in California, wedding RSVP, wedding location details, summer weddings in California, wedding invitations, Colin Franceschini, Ornella wedding details"
+          name="keywords"
+        />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="https://franceschini.wedding" rel="canonical" />
 
         {/* Open Graph Meta Tags */}
         <meta content="website" property="og:type" />
-        <meta content="Colin & Orne" property="og:title" />
-        <meta content="Colin and Orne are getting married!" property="og:description" />
+        <meta content="Colin & Orne Wedding" property="og:title" />
+        <meta
+          content="Join Colin and Orne on July 13, 2025, at 5:00 PM for their wedding at Stonetree Estate in Novato, CA. Discover event details, location, and more about their special day."
+          property="og:description"
+        />
         <meta content="https://franceschini.wedding" property="og:url" />
         <meta content="https://i.ibb.co/dQG3QVC/image.jpg" property="og:image" />
 
