@@ -29,17 +29,23 @@ const Page: FC = () => {
   }, [])
 
   return (
-    <div className="flex justify-center p-2">
-      {loading ? (
-        <div>
-          <div className="lds-heart">
-            <div />
+    <div>
+      <h2 className="text-center my-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        Gallery
+      </h2>
+      <div className="flex justify-center p-2">
+        {loading ? (
+          <div>
+            <div className="lds-heart">
+              <div />
+            </div>
           </div>
-        </div>
-      ) : (
-        <Gallery photos={images} />
-      )}
+        ) : (
+          <Gallery photos={images} />
+        )}
+      </div> 
     </div>
+    
   )
 }
 

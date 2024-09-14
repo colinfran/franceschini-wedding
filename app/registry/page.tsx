@@ -11,7 +11,10 @@ import { RegistryItem } from "@/types"
 const Page: FC = async () => {
   const registryData: RegistryItem[] = await getRegistryData()
   return (
-    <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4">
+    <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4 pt-0">
+      <h2 className="text-center mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        Registry
+      </h2>
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
         <div className="m-auto max-w-[736px]">
           <Link

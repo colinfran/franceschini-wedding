@@ -9,7 +9,10 @@ import Link from "next/link"
 
 const Page: FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center p-8">
+    <div className="flex flex-col items-center justify-center p-8 pt-0">
+      <h2 className="text-center mb-6 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+        FAQs
+      </h2>
       <Accordion className="w-[90%] md:w-[600px] lg:w-[700px]" type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger className="text-left">
