@@ -5,6 +5,7 @@ import React from "react"
 import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/Header"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import Script from "next/script"
 const gaId = process.env.NEXT_PUBLIC_MEASUREMENT_ID!
 
 const inter = Inter({ subsets: ["latin"] })
@@ -39,7 +40,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
 
         {/* SEO Meta Tags */}
-        <meta content="Orne and Colin are getting married!" name="description" />
+        <meta content="Colin & Colin are getting married!" name="description" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="https://franceschini.wedding" rel="canonical" />
 
@@ -55,6 +56,31 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <meta content="Colin & Orne" name="twitter:title" />
         <meta content="Colin and Orne are getting married!" name="twitter:description" />
         <meta content="https://i.ibb.co/dQG3QVC/image.jpg" name="twitter:image" />
+
+        {/* JSON-LD Structured Data */}
+        <Script id="json-ld" type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Event",
+            name: "Colin & Ornella's Wedding",
+            startDate: "2025-07-13T17:00",
+            endDate: "2025-07-13T23:00",
+            eventStatus: "EventScheduled",
+            eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+            location: {
+              "@type": "Place",
+              name: "Stonetree Estate",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "9 Stone Tree Ln",
+                addressLocality: "Novato",
+                addressRegion: "CA",
+                postalCode: "94945",
+                addressCountry: "US",
+              },
+            },
+          })}
+        </Script>
       </head>
       <body className={inter.className}>
         <div>

@@ -1,7 +1,7 @@
 "use client"
 
 import React, { FC, useEffect, useState } from "react"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import { MobileNav } from "@/components/mobile-nav"
 import Link from "next/link"
 
@@ -35,7 +35,6 @@ export const headerLinks = [
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
   const [width, setWidth] = useState<number>(0)
 
   const handleWindowSizeChange = (): void => {

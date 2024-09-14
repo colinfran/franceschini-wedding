@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React, { FC, SVGProps, useState } from "react"
 import { headerLinks } from "./Header"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -27,7 +27,6 @@ const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 }
 
 export const MobileNav: FC = () => {
-  const router = useRouter()
   const pathname = usePathname()
 
   const [open, setOpen] = useState(false)
