@@ -33,8 +33,8 @@ export const MobileNav: FC = () => {
   const [open, setOpen] = useState(false)
 
   const handleLinkClick = (path: string): void => {
-    if (pathname === path){
-      router.refresh();
+    if (pathname === path) {
+      router.refresh()
     }
     setOpen(false)
   }
@@ -64,7 +64,7 @@ export const MobileNav: FC = () => {
                 href={item.path}
                 key={item.path}
                 prefetch={false}
-                onClick={()=> handleLinkClick(item.path)}
+                onClick={() => handleLinkClick(item.path)}
               >
                 {item.title}
               </Link>
