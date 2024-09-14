@@ -37,7 +37,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
 
         {/* SEO Meta Tags */}
         <meta
-          content="Join Colin and Orne on July 13, 2025, at 5:00 PM for their wedding at Stonetree Estate in Novato, CA. Discover event details, location, and more about their special day."
+          content="Join Colin and Orne for their wedding on July 13, 2025, at Stonetree Estate in Novato, CA. Discover event details and celebrate their special day."
           name="description"
         />
         <meta
@@ -51,7 +51,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <meta content="website" property="og:type" />
         <meta content="Colin & Orne Wedding" property="og:title" />
         <meta
-          content="Join Colin and Orne on July 13, 2025, at 5:00 PM for their wedding at Stonetree Estate in Novato, CA. Discover event details, location, and more about their special day."
+          content="Join Colin and Orne for their wedding on July 13, 2025, at Stonetree Estate in Novato, CA. Discover event details and celebrate their special day."
           property="og:description"
         />
         <meta content="https://franceschini.wedding" property="og:url" />
