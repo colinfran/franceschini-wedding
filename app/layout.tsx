@@ -10,10 +10,6 @@ const gaId = process.env.NEXT_PUBLIC_MEASUREMENT_ID!
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "Colin & Orne Wedding",
-}
-
 type RootLayoutProps = {
   children?: React.ReactNode
 }
@@ -37,6 +33,8 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
         <link href="/manifest.json" rel="manifest" />
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
+
+        <title>Colin & Orne Wedding</title>
 
         {/* SEO Meta Tags */}
         <meta
