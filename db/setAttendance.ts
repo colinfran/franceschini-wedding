@@ -22,7 +22,7 @@ export const setAttendance = async (id: string, willAttend: string): Promise<boo
       { _id: new ObjectId(id) },
       { $set: { 
         willAttend,
-        updatedAt: moment().format('LLL')
+        date: moment().format('LLL')
        } },
       { upsert: false }
     )
