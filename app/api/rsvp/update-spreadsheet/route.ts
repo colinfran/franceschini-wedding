@@ -5,7 +5,7 @@ import { getAttendees } from "@/db/getAttendees"
  * Handles GET requests to the '/api/rsvp/update-spreadsheet' endpoint.
  * Retrieves the list of attendees from the database and formats it.
  * @returns {Promise<NextResponse>} A Promise that resolves to a JSON response containing:
- *   - `formattedData`: An array of arrays, each containing the attendee's ID, list of attendees, 
+ *   - `formattedData`: An array of arrays, each containing the attendee's ID, list of attendees,
  *      attendance status, and submission date.
  *   - `error`: An object indicating an error if the operation fails.
  */
