@@ -16,7 +16,7 @@ const Page: FC = () => {
             What is the date and time of the wedding?
           </AccordionTrigger>
           <AccordionContent>
-            The wedding and the reception will take place on Sunday, July 13th 2025 at 5pm.
+            The wedding and the reception will take place on Sunday, July 13th 2025 starting at 5pm.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">

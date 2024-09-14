@@ -26,7 +26,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "c.media-amazon.com"
+        hostname: "*.media-amazon.com"
       },
       {
         protocol: "https",
