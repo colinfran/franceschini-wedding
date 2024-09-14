@@ -27,6 +27,7 @@ export const findAssociatedAttendees = (guestList: GuestList, name: string): Gue
         _id: guest._id,
         attendees: guest.attendees,
         willAttend: guest.willAttend,
+        date: guest.date || ""
       }
     }
   }
