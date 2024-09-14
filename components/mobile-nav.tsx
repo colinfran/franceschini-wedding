@@ -34,8 +34,7 @@ export const MobileNav: FC = () => {
 
   const handleLinkClick = (path: string): void => {
     if (pathname === path) {
-      router.push(window.location.href)
-      router.refresh()
+      window.location.reload()
     }
     setOpen(false)
   }

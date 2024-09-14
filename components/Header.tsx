@@ -75,8 +75,7 @@ const Header: FC = () => {
             key={item.path}
             onClick={() => {
               if (pathname === item.path) {
-                router.push(window.location.href)
-                router.refresh()
+                window.location.reload()
               }
             }}
           >
