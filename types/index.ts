@@ -95,7 +95,7 @@ type Guest = {
   _id: string;
   attendees: string[];
   willAttend: string;
-  date?: string; 
+  date: string; 
 };
 
 type GuestList = {
