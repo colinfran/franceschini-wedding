@@ -37,6 +37,24 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
         <link href="/manifest.json" rel="manifest" />
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
+         
+        {/* SEO Meta Tags */}
+        <meta name="description" content="Orne and Colin are getting married!" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://franceschini.wedding" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Colin & Orne" />
+        <meta property="og:description" content="Colin and Orne are getting married!" />
+        <meta property="og:url" content="https://franceschini.wedding" />
+        <meta property="og:image" content="https://i.ibb.co/dQG3QVC/image.jpg" />
+
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Colin & Orne" />
+        <meta name="twitter:description" content="Colin and Orne are getting married!" />
+        <meta name="twitter:image" content="https://i.ibb.co/dQG3QVC/image.jpg" />
       </head>
       <body className={inter.className}>
         <div>
