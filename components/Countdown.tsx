@@ -8,14 +8,22 @@ type Props = {
 
 const Countdown: FC<Props> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft(targetDate))
-    }, 1000)
+    setMounted(true)
+  }, [])
 
-    return () => clearInterval(timer)
-  }, [targetDate])
+  useEffect(() => {
+    if (mounted) {
+      setTimeLeft(calculateTimeLeft(targetDate)) // Update once on mount
+      const timer = setInterval(() => {
+        setTimeLeft(calculateTimeLeft(targetDate))
+      }, 1000)
+
+      return () => clearInterval(timer)
+    }
+  }, [mounted, targetDate])
 
   return (
     <div>
