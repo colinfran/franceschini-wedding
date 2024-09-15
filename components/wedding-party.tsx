@@ -96,12 +96,12 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 1"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/Wt8CGsT/jaycob.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Jaycob Barros</h3>
                 <p className="text-muted-foreground">Best Man</p>
               </div>
             </div>
@@ -111,12 +111,12 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 2"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/TtWqy3z/troy.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Troy Burr</h3>
                 <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
@@ -126,12 +126,12 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 3"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/TcPWvqv/luke.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Luke Swanson</h3>
                 <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
@@ -141,12 +141,12 @@ const WeddingParty: FC = () => {
                   alt="Groomsman 4"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/NVpkVPc/kam.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Kamron Hamzehloo</h3>
                 <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
@@ -162,7 +162,7 @@ const WeddingParty: FC = () => {
               </div>
               <div className="text-center">
                 <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">Friend</p>
+                <p className="text-muted-foreground">??????</p>
               </div>
             </div>
             <div className="flex flex-col items-center gap-4">
