@@ -44,14 +44,20 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
           content="Colin and Orne wedding, wedding at Stonetree Estate, July 13 2025 wedding, Novato CA wedding, wedding ceremony, wedding reception, California weddings, Stonetree Estate venue, Colin and Orne's special day, wedding event details, wedding guest information, wedding venue Stonetree Estate, Colin Franceschini and Ornella wedding, wedding in Novato California, wedding celebration, wedding planning, wedding guests, wedding schedule, love and marriage, wedding party, outdoor wedding, wedding date July 13, Stonetree Estate wedding venue, beautiful wedding in California, wedding RSVP, wedding location details, summer weddings in California, wedding invitations, Colin Franceschini, Ornella wedding details"
           name="keywords"
         />
-        <meta name="author" content="Colin & Ornella" />
+        <meta content="Colin & Ornella" name="author" />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="https://franceschini.wedding" rel="canonical" />
 
         {/* Open Graph Meta Tags */}
         <meta content="website" property="og:type" />
-        <meta content="Colin & Orne's Wedding - July 13, 2025 at Stonetree Estate" property="og:title" />
-        <meta content="Colin & Orne sharing champagne to celebrate their engagement" property="og:image:alt" />
+        <meta
+          content="Colin & Orne's Wedding - July 13, 2025 at Stonetree Estate"
+          property="og:title"
+        />
+        <meta
+          content="Colin & Orne sharing champagne to celebrate their engagement"
+          property="og:image:alt"
+        />
         <meta
           content="Join Colin and Orne for their wedding on July 13, 2025, at Stonetree Estate in Novato, CA. Discover event details and celebrate their special day."
           property="og:description"
@@ -61,10 +67,16 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
 
         {/* Twitter Card Meta Tags */}
         <meta content="summary_large_image" name="twitter:card" />
-        <meta content="Colin & Orne's Wedding - July 13, 2025 at Stonetree Estate" name="twitter:title" />
+        <meta
+          content="Colin & Orne's Wedding - July 13, 2025 at Stonetree Estate"
+          name="twitter:title"
+        />
         <meta content="Colin and Orne are getting married!" name="twitter:description" />
         <meta content="https://i.ibb.co/Tw4sNb7/ogimage.jpg" name="twitter:image" />
-        <meta content="Colin & Orne sharing champagne to celebrate their engagement" property="twitter:image:alt" />
+        <meta
+          content="Colin & Orne sharing champagne to celebrate their engagement"
+          property="twitter:image:alt"
+        />
 
         {/* JSON-LD Structured Data */}
         <Script id="json-ld" type="application/ld+json">
