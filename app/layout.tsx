@@ -49,19 +49,19 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
 
         {/* Open Graph Meta Tags */}
         <meta content="website" property="og:type" />
-        <meta content="Colin & Orne Wedding" property="og:title" />
+        <meta content="Colin & Orne's Wedding" property="og:title" />
         <meta
           content="Join Colin and Orne for their wedding on July 13, 2025, at Stonetree Estate in Novato, CA. Discover event details and celebrate their special day."
           property="og:description"
         />
         <meta content="https://franceschini.wedding" property="og:url" />
-        <meta content="https://i.ibb.co/dQG3QVC/image.jpg" property="og:image" />
+        <meta content="https://i.ibb.co/Tw4sNb7/ogimage.jpg" property="og:image" />
 
         {/* Twitter Card Meta Tags */}
         <meta content="summary_large_image" name="twitter:card" />
-        <meta content="Colin & Orne" name="twitter:title" />
+        <meta content="Colin & Orne's Wedding" name="twitter:title" />
         <meta content="Colin and Orne are getting married!" name="twitter:description" />
-        <meta content="https://i.ibb.co/dQG3QVC/image.jpg" name="twitter:image" />
+        <meta content="https://i.ibb.co/Tw4sNb7/ogimage.jpg" name="twitter:image" />
 
         {/* JSON-LD Structured Data */}
         <Script id="json-ld" type="application/ld+json">
