@@ -2,8 +2,11 @@
 import React, { useState, useEffect, FC } from "react"
 import { calculateTimeLeft } from "@/lib/utils"
 
-const Countdown: FC = () => {
-  const targetDate = "7-13-2025"
+type Props = {
+  targetDate: string
+}
+
+const Countdown: FC<Props> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
   const [mounted, setMounted] = useState(false)
 

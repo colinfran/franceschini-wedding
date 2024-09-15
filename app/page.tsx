@@ -19,7 +19,7 @@ const Page: FC = () => {
           />
         </div>
         <div className="my-6 flex flex-col items-center justify-center">
-          <Countdown />
+          <Countdown targetDate="7-13-2025" />
         </div>
         <div className="relative flex items-center justify-start">
           <Image
