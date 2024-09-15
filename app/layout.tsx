@@ -33,7 +33,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         <link href="/manifest.json" rel="manifest" />
         <meta content="/ms-icon-144x144.png" name="msapplication-TileImage" />
 
-        <title>Colin & Orne Wedding</title>
+        <title>Colin & Orne&amp;s Wedding</title>
 
         {/* SEO Meta Tags */}
         <meta
