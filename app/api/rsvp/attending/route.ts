@@ -1,6 +1,8 @@
 import { setAttendance } from "@/db/setAttendance"
 import { NextRequest, NextResponse } from "next/server"
 
+const endpoint = process.env.GOOGLE_SCRIPT_ENDPOINT!
+
 /**
  * Handles POST requests to the '/api/rsvp/attending' endpoint.
  * Updates the RSVP status for a guest.
@@ -13,9 +15,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const { _id, attending } = await request.json()
     const success = await setAttendance(_id, attending)
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbyeQeeLZaY8qkQz4PvkHcclAOtFVkux1srySG9cE7CC6d9eO3jQinC4KjhUhDfqI5O1/exec",
-    )
+    await fetch(endpoint)
     return NextResponse.json({ error: false, success })
   } catch (err) {
     console.error(err)
