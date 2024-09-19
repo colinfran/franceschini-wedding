@@ -10,7 +10,7 @@ import { getAttendees } from "@/db/getAttendees"
  *   - `error`: An object indicating an error if the operation fails.
  */
 
-export async function GET(): Promise<NextResponse> {
+export async function POST(): Promise<NextResponse> {
   try {
     const attendees = await getAttendees()
     const dataRows = attendees.guests.map((item) => [
