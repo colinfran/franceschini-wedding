@@ -13,7 +13,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
     const { _id, attending } = await request.json()
     const success = await setAttendance(_id, attending)
-    fetch(
+    await fetch(
       "https://script.google.com/macros/s/AKfycbyeQeeLZaY8qkQz4PvkHcclAOtFVkux1srySG9cE7CC6d9eO3jQinC4KjhUhDfqI5O1/exec",
     )
     return NextResponse.json({ error: false, success })
