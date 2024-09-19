@@ -154,3 +154,16 @@
   -webkit-box-orient: vertical;
   white-space: normal;
 }
+
+.youtube-container lite-youtube {
+  margin: auto;
+  height: 500px;
+  max-width: 100%;
+}
+
+.youtube-container iframe {
+  margin: auto;
+  display: block; /* Ensures margin auto works */
+  height: 500px;
+  max-width: 100%;
+}
