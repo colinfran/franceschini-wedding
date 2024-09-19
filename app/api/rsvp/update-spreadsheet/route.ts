@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { getAttendees } from "@/db/getAttendees"
+import { wait } from "@/lib/utils"
 
 /**
  * Handles POST requests to the '/api/rsvp/update-spreadsheet' endpoint.
@@ -12,6 +13,7 @@ import { getAttendees } from "@/db/getAttendees"
 
 export async function POST(): Promise<NextResponse> {
   try {
+    await wait(3000)
     const attendees = await getAttendees()
     const dataRows = attendees.guests.map((item) => [
       item.attendees.join(", "),
