@@ -1,7 +1,7 @@
-import React, { FC, Suspense } from "react"
+import React, { FC } from "react"
 import Image from "next/image"
 import Countdown from "@/components/Countdown"
-import { YouTubeEmbed } from '@next/third-parties/google'
+import { YouTubeEmbed } from "@next/third-parties/google"
 
 const Page: FC = () => {
   return (
@@ -34,8 +34,8 @@ const Page: FC = () => {
           />
         </div>
       </div>
-      <div className="m-auto my-20 max-w-[1000px] youtube-container">
-        <YouTubeEmbed 
+      <div className="youtube-container m-auto my-20 max-w-[1000px]">
+        <YouTubeEmbed
           videoid="NCcRc7sAOTo"
           // height={500}
         />
