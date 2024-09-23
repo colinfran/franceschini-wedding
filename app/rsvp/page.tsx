@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Guest } from "@/types"
+import { Textarea } from "@/components/ui/textarea"
 
 const Page: FC = () => {
   const [name, setName] = useState<string>("")
@@ -20,7 +21,7 @@ const Page: FC = () => {
   const [isAttending, setIsAttending] = useState<string>("Select attendance")
   const [status, setStatus] = useState<string>("user enter name")
   const [attendeeData, setAttendeeData] = useState<Guest | undefined>(undefined)
-
+  const [message, setMessage] = useState<string>("")
   const checkIfValidName = async (): Promise<void> => {
     setLoading1(true)
     try {
@@ -54,7 +55,7 @@ const Page: FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...attendeeData, attending: isAttending }),
+        body: JSON.stringify({ ...attendeeData, attending: isAttending, message: message }),
       })
       const { success } = await response.json()
       if (success) {
@@ -128,6 +129,10 @@ const Page: FC = () => {
                 <SelectItem value="no">No, I am unable to attend.</SelectItem>
               </SelectContent>
             </Select>
+            <span className="mt-4">
+              If someone in your party can&apos;t attend, please specify here. Or leave a nice message.
+            </span>
+            <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
             <Button
               className="w-full"
               disabled={isAttending === "Select attendance"}
@@ -138,7 +143,8 @@ const Page: FC = () => {
             </Button>
             {attendeeData && attendeeData.attendees.length > 1 && (
               <span className="my-4">
-                Your submission will be applied to both you and your guests.
+                Your submission will be applied to both you and your guests unless specified in the
+                above text field.
               </span>
             )}
           </div>

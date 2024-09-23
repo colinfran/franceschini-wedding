@@ -96,6 +96,7 @@ type Guest = {
   attendees: string[];
   willAttend: string;
   date: string; 
+  message?: string;
 };
 
 type GuestList = {

@@ -17,8 +17,9 @@ export async function POST(): Promise<NextResponse> {
       item.attendees.join(", "),
       item.willAttend,
       item.date,
+      item.message,
     ])
-    const headers = ["Names", "Will Attend", "Submission Date"]
+    const headers = ["Names", "Will Attend", "Submission Date", "Message"]
     const formattedData = [headers, ...dataRows]
     return NextResponse.json(formattedData)
   } catch (err) {

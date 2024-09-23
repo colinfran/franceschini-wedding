@@ -13,8 +13,8 @@ const endpoint = process.env.GOOGLE_SCRIPT_ENDPOINT!
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
-    const { _id, attending } = await request.json()
-    const success = await setAttendance(_id, attending)
+    const { _id, attending, message } = await request.json()
+    const success = await setAttendance(_id, attending, message)
     await fetch(endpoint)
     return NextResponse.json({ error: false, success })
   } catch (err) {

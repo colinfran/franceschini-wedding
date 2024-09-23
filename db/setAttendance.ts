@@ -12,7 +12,7 @@ const uri = process.env.MONGODB_URI!
  * @returns {Promise<boolean>} A Promise that resolves with `true` if the update was successful, `false` otherwise.
  */
 
-export const setAttendance = async (id: string, willAttend: string): Promise<boolean> => {
+export const setAttendance = async (id: string, willAttend: string, message: string): Promise<boolean> => {
   const client = new MongoClient(uri)
   try {
     await client.connect()
@@ -22,7 +22,8 @@ export const setAttendance = async (id: string, willAttend: string): Promise<boo
       { _id: new ObjectId(id) },
       { $set: { 
         willAttend,
-        date: moment().format('LLL')
+        date: moment().format('LLL'),
+        message,
        } },
       { upsert: false }
     )
