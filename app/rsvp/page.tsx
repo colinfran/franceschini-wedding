@@ -130,7 +130,8 @@ const Page: FC = () => {
               </SelectContent>
             </Select>
             <span className="mt-4">
-              If someone in your party can&apos;t attend, please specify here. Or leave a nice message.
+              If someone in your party can&apos;t attend, please specify here. Or leave a nice
+              message.
             </span>
             <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
             <Button
