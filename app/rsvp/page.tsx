@@ -96,7 +96,7 @@ const Page: FC = () => {
           </div>
         )}
         {status === "valid name" && (
-          <div className="flex flex-col gap-4 text-center">
+          <div className="flex flex-col gap-4 text-center mb-8">
             <span>{`Hey ${name}!`}</span>
             {attendeeData && attendeeData.attendees.length > 1 && (
               <div>
