@@ -22,6 +22,11 @@ const Page: FC = () => {
   const [status, setStatus] = useState<string>("user enter name")
   const [attendeeData, setAttendeeData] = useState<Guest | undefined>(undefined)
   const [message, setMessage] = useState<string>("")
+  const textAreaPlaceholder =
+    attendeeData && attendeeData.attendees.length > 1
+      ? "If someone in your party can't attend, please specify here. Or leave a message."
+      : "Leave a message."
+
   const checkIfValidName = async (): Promise<void> => {
     setLoading1(true)
     try {
@@ -75,7 +80,7 @@ const Page: FC = () => {
       <h2 className="my-6 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
         RSVP
       </h2>
-      <div className="m-auto w-[300px] text-center">
+      <div className="m-auto w-[325px] text-center">
         {status === "user enter name" && (
           <div className="flex flex-col gap-4">
             <Input
@@ -129,11 +134,12 @@ const Page: FC = () => {
                 <SelectItem value="no">No, I am unable to attend.</SelectItem>
               </SelectContent>
             </Select>
-            <span className="mt-4">
-              If someone in your party can&apos;t attend, please specify here. Or leave a nice
-              message.
-            </span>
-            <Textarea value={message} onChange={(e) => setMessage(e.target.value)} />
+            <Textarea
+              className="mt-4 min-h-[100px] text-base"
+              placeholder={textAreaPlaceholder}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
             <Button
               className="w-full"
               disabled={isAttending === "Select attendance"}
