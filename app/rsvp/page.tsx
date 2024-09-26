@@ -79,26 +79,23 @@ const Page: FC = () => {
     }
   }
 
-  const filteredAttendees = listOfGuests.flatMap(guest =>
-    guest.attendees.filter(attendee => {
-      const [firstName, ...lastNameParts] = attendee.split(" ");
-      const lastNameFull = lastNameParts.join(" "); // Join remaining parts as the full last name
-      
+  const filteredAttendees = listOfGuests.flatMap((guest) =>
+    guest.attendees.filter((attendee) => {
+      const [firstName, ...lastNameParts] = attendee.split(" ")
+      const lastNameFull = lastNameParts.join(" ") // Join remaining parts as the full last name
+
       // Check if the first name's initial matches
-      const isFirstNameMatch = firstName.charAt(0) === firstNameInitial;
-  
+      const isFirstNameMatch = firstName.charAt(0) === firstNameInitial
+
       // Split the last name into parts for checking
-      const lastNameSearchParts = lastName.split(" ");
-  
+      const lastNameSearchParts = lastName.split(" ")
+
       // Check if any part of the last name matches
-      const isLastNameMatch = lastNameSearchParts.every(part => 
-        lastNameFull.includes(part)
-      );
-  
-      return isFirstNameMatch && isLastNameMatch; // Return true if both conditions are satisfied
-    })
-  );
-  
+      const isLastNameMatch = lastNameSearchParts.every((part) => lastNameFull.includes(part))
+
+      return isFirstNameMatch && isLastNameMatch // Return true if both conditions are satisfied
+    }),
+  )
 
   return (
     <div>
@@ -110,11 +107,11 @@ const Page: FC = () => {
           <div className="flex flex-col gap-4">
             <div className="flex flex-row gap-2">
               <Input
-                className="text-base w-[110px]"
+                className="w-[110px] text-base"
+                maxLength={1}
                 placeholder="First initial"
                 value={firstNameInitial}
                 onChange={(e) => setFirstNameInitial(e.target.value)}
-                maxLength={1}
               />
               <Input
                 className="text-base"
@@ -123,7 +120,11 @@ const Page: FC = () => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
-            <Button className="w-full" disabled={firstNameInitial === "" || lastName === ""} onClick={checkIfValidName}>
+            <Button
+              className="w-full"
+              disabled={firstNameInitial === "" || lastName === ""}
+              onClick={checkIfValidName}
+            >
               {loading1 && <Loader2 className="mr-2 size-4 animate-spin" />}
               Submit
             </Button>
@@ -132,22 +133,25 @@ const Page: FC = () => {
         {status === "valid name" && (
           <div className="mb-8 flex flex-col gap-4 text-center">
             <span>
-              Select your name from the list below. If you do not see your name, refresh and try again.
+              Select your name from the list below. If you do not see your name, refresh and try
+              again.
             </span>
             {filteredAttendees.map((attendee) => {
               return (
                 <Button
-                  key={attendee} // Ensure each button has a unique key
                   className="w-full"
-                  onClick={()=> {
+                  key={attendee} // Ensure each button has a unique key
+                  onClick={() => {
                     setSelectedGuest(attendee)
-                    setAttendeeData(listOfGuests.find((guest)=> guest.attendees.includes(attendee)))
+                    setAttendeeData(
+                      listOfGuests.find((guest) => guest.attendees.includes(attendee)),
+                    )
                     setStatus("selected name")
                   }}
                 >
                   {attendee}
                 </Button>
-              );
+              )
             })}
           </div>
         )}
@@ -158,23 +162,23 @@ const Page: FC = () => {
               <div>
                 <span>Your additional guests are:</span>
                 <ul className="list-inside list-disc [&>li]:mt-2">
-                {attendeeData.attendees
-                  .filter((el) => {
-                    const [firstName, ...lastNameParts] = el.split(" ");
-                    const lastNameFull = lastNameParts.join(" "); // Join remaining parts to form full last name
+                  {attendeeData.attendees
+                    .filter((el) => {
+                      const [firstName, ...lastNameParts] = el.split(" ")
+                      const lastNameFull = lastNameParts.join(" ") // Join remaining parts to form full last name
 
-                    // Check if the first name's initial matches
-                    const isFirstNameMatch = firstName.charAt(0) === firstNameInitial;
+                      // Check if the first name's initial matches
+                      const isFirstNameMatch = firstName.charAt(0) === firstNameInitial
 
-                    // Check if the last name matches (this can allow for partial matches if needed)
-                    const isLastNameMatch = lastNameFull.includes(lastName);
+                      // Check if the last name matches (this can allow for partial matches if needed)
+                      const isLastNameMatch = lastNameFull.includes(lastName)
 
-                    // We want to keep attendees who do NOT match both conditions
-                    return !(isFirstNameMatch && isLastNameMatch);
-                  })
-                  .map((el) => (
-                    <li key={uniqid()}>{el}</li>
-                  ))}
+                      // We want to keep attendees who do NOT match both conditions
+                      return !(isFirstNameMatch && isLastNameMatch)
+                    })
+                    .map((el) => (
+                      <li key={uniqid()}>{el}</li>
+                    ))}
                 </ul>
               </div>
             )}

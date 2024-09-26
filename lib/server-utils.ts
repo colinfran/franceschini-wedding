@@ -20,24 +20,28 @@ export const getRegistryData = async (): Promise<RegistryItem[]> => {
   return data.default_collection
 }
 
-export const findAssociatedAttendees = (guestList: GuestList, firstNameInitial: string, lastName: string): Guest[] | null => {
-  const matchedGuests: Guest[] = [];
-  
+export const findAssociatedAttendees = (
+  guestList: GuestList,
+  firstNameInitial: string,
+  lastName: string,
+): Guest[] | null => {
+  const matchedGuests: Guest[] = []
+
   // Split the provided lastName into its parts
-  const lastNameParts = lastName.split(" ");
+  const lastNameParts = lastName.split(" ")
 
   for (const guest of guestList.guests) {
     for (const fullName of guest.attendees) {
-      const nameParts = fullName.split(" ");
-      const firstName = nameParts[0];
-      const restOfName = nameParts.slice(1); // Everything after the first name
-      
+      const nameParts = fullName.split(" ")
+      const firstName = nameParts[0]
+      const restOfName = nameParts.slice(1) // Everything after the first name
+
       // Check if first name's initial matches
       if (firstName.charAt(0) === firstNameInitial) {
         // Check if any part of the restOfName contains the lastName sequence
-        const isLastNameMatch = lastNameParts.every(part => 
-          restOfName.some(namePart => namePart.startsWith(part))
-        );
+        const isLastNameMatch = lastNameParts.every((part) =>
+          restOfName.some((namePart) => namePart.startsWith(part)),
+        )
 
         if (isLastNameMatch) {
           matchedGuests.push({
@@ -45,13 +49,12 @@ export const findAssociatedAttendees = (guestList: GuestList, firstNameInitial: 
             attendees: guest.attendees,
             willAttend: guest.willAttend,
             date: guest.date || "",
-          });
+          })
         }
       }
     }
   }
 
   // Return matched guests or null if no matches
-  return matchedGuests.length > 0 ? matchedGuests : null;
-};
-
+  return matchedGuests.length > 0 ? matchedGuests : null
+}
