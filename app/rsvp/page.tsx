@@ -15,12 +15,15 @@ import { Guest } from "@/types"
 import { Textarea } from "@/components/ui/textarea"
 
 const Page: FC = () => {
-  const [name, setName] = useState<string>("")
+  const [firstNameInitial, setFirstNameInitial] = useState<string>("")
+  const [lastName, setLastName] = useState<string>("")
   const [loading1, setLoading1] = useState<boolean>(false)
   const [loading2, setLoading2] = useState<boolean>(false)
   const [isAttending, setIsAttending] = useState<string>("Select attendance")
   const [status, setStatus] = useState<string>("user enter name")
+  const [listOfGuests, setListOfGuests] = useState<Guest[]>([])
   const [attendeeData, setAttendeeData] = useState<Guest | undefined>(undefined)
+  const [selectedGuest, setSelectedGuest] = useState<string>("")
   const [message, setMessage] = useState<string>("")
   const textAreaPlaceholder =
     attendeeData && attendeeData.attendees.length > 1
@@ -35,13 +38,14 @@ const Page: FC = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name }),
+        body: JSON.stringify({ firstNameInitial, lastName }),
       })
       const { found, result, error } = await response.json()
       if (error) throw Error("An error occured.")
       if (found) {
         setStatus("valid name")
-        setAttendeeData(result)
+        setListOfGuests(result)
+        console.log(result)
       } else {
         setStatus("invalid name")
       }
@@ -75,6 +79,27 @@ const Page: FC = () => {
     }
   }
 
+  const filteredAttendees = listOfGuests.flatMap(guest =>
+    guest.attendees.filter(attendee => {
+      const [firstName, ...lastNameParts] = attendee.split(" ");
+      const lastNameFull = lastNameParts.join(" "); // Join remaining parts as the full last name
+      
+      // Check if the first name's initial matches
+      const isFirstNameMatch = firstName.charAt(0) === firstNameInitial;
+  
+      // Split the last name into parts for checking
+      const lastNameSearchParts = lastName.split(" ");
+  
+      // Check if any part of the last name matches
+      const isLastNameMatch = lastNameSearchParts.every(part => 
+        lastNameFull.includes(part)
+      );
+  
+      return isFirstNameMatch && isLastNameMatch; // Return true if both conditions are satisfied
+    })
+  );
+  
+
   return (
     <div>
       <h2 className="my-6 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -83,13 +108,22 @@ const Page: FC = () => {
       <div className="m-auto w-[325px] text-center">
         {status === "user enter name" && (
           <div className="flex flex-col gap-4">
-            <Input
-              className="text-base"
-              placeholder="Enter full name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <Button className="w-full" disabled={name === ""} onClick={checkIfValidName}>
+            <div className="flex flex-row gap-2">
+              <Input
+                className="text-base w-[110px]"
+                placeholder="First initial"
+                value={firstNameInitial}
+                onChange={(e) => setFirstNameInitial(e.target.value)}
+                maxLength={1}
+              />
+              <Input
+                className="text-base"
+                placeholder="Last name"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
+            <Button className="w-full" disabled={firstNameInitial === "" || lastName === ""} onClick={checkIfValidName}>
               {loading1 && <Loader2 className="mr-2 size-4 animate-spin" />}
               Submit
             </Button>
@@ -97,16 +131,50 @@ const Page: FC = () => {
         )}
         {status === "valid name" && (
           <div className="mb-8 flex flex-col gap-4 text-center">
-            <span>{`Hey ${name}!`}</span>
+            <span>
+              Select your name from the list below. If you do not see your name, refresh and try again.
+            </span>
+            {filteredAttendees.map((attendee) => {
+              return (
+                <Button
+                  key={attendee} // Ensure each button has a unique key
+                  className="w-full"
+                  onClick={()=> {
+                    setSelectedGuest(attendee)
+                    setAttendeeData(listOfGuests.find((guest)=> guest.attendees.includes(attendee)))
+                    setStatus("selected name")
+                  }}
+                >
+                  {attendee}
+                </Button>
+              );
+            })}
+          </div>
+        )}
+        {status === "selected name" && (
+          <div className="mb-8 flex flex-col gap-4 text-center">
+            <span>{`Hey ${selectedGuest}!`}</span>
             {attendeeData && attendeeData.attendees.length > 1 && (
               <div>
                 <span>Your additional guests are:</span>
                 <ul className="list-inside list-disc [&>li]:mt-2">
-                  {attendeeData.attendees
-                    .filter((el) => el !== name)
-                    .map((el) => (
-                      <li key={uniqid()}>{el}</li>
-                    ))}
+                {attendeeData.attendees
+                  .filter((el) => {
+                    const [firstName, ...lastNameParts] = el.split(" ");
+                    const lastNameFull = lastNameParts.join(" "); // Join remaining parts to form full last name
+
+                    // Check if the first name's initial matches
+                    const isFirstNameMatch = firstName.charAt(0) === firstNameInitial;
+
+                    // Check if the last name matches (this can allow for partial matches if needed)
+                    const isLastNameMatch = lastNameFull.includes(lastName);
+
+                    // We want to keep attendees who do NOT match both conditions
+                    return !(isFirstNameMatch && isLastNameMatch);
+                  })
+                  .map((el) => (
+                    <li key={uniqid()}>{el}</li>
+                  ))}
                 </ul>
               </div>
             )}

@@ -14,9 +14,9 @@ import { getAttendees } from "@/db/getAttendees"
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {
-    const { name } = await request.json()
+    const { firstNameInitial, lastName } = await request.json()
     const attendees = await getAttendees()
-    const result = findAssociatedAttendees(attendees, name)
+    const result = findAssociatedAttendees(attendees, firstNameInitial, lastName)
     if (result) {
       return NextResponse.json({ error: false, found: true, result })
     }

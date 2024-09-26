@@ -41,7 +41,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
           name="description"
         />
         <meta
-          content="Colin and Orne wedding, wedding at Stonetree Estate, July 13 2025 wedding, Novato CA wedding, wedding ceremony, wedding reception, California weddings, Stonetree Estate venue, Colin and Orne's special day, wedding event details, wedding guest information, wedding venue Stonetree Estate, Colin Franceschini and Ornella wedding, wedding in Novato California, wedding celebration, wedding planning, wedding guests, wedding schedule, love and marriage, wedding party, outdoor wedding, wedding date July 13, Stonetree Estate wedding venue, beautiful wedding in California, wedding RSVP, wedding location details, summer weddings in California, wedding invitations, Colin Franceschini, Ornella wedding details"
+          content="Colin and Orne wedding, wedding at Stonetree Estate, July 13 2025 wedding, Novato CA wedding, wedding ceremony, wedding reception, California weddings, Stonetree Estate venue, Colin and Orne's special day, wedding event details, wedding guest information, wedding venue Stonetree Estate, Colin Franceschini and Ornella wedding, wedding in Novato California, wedding celebration, wedding planning, wedding guests, wedding schedule, love and marriage, wedding party, outdoor wedding, wedding date July 13, Stonetree Estate wedding venue, beautiful wedding in California, wedding RSVP, wedding location details, summer weddings in California, wedding invitations, Colin Franceschini, Ornella wedding details, franceschini.wedding, franceschini wedding, franceschiniwedding.com, franceschiniwedding"
           name="keywords"
         />
         <meta content="Colin & Ornella" name="author" />
