@@ -1,5 +1,4 @@
-import { findAssociatedAttendees } from "@/lib/server-utils"
-import { Guest, GuestList, ResponseData } from "@/types"
+import { GuestList } from "@/types"
 import { MongoClient } from "mongodb"
 
 const uri = process.env.MONGODB_URI!

@@ -1,6 +1,3 @@
-import { findAssociatedAttendees } from "@/lib/server-utils"
-import { Guest, GuestList, ResponseData } from "@/types"
-import moment from "moment"
 import { MongoClient, ObjectId } from "mongodb"
 
 const uri = process.env.MONGODB_URI!
@@ -18,11 +15,20 @@ export const setAttendance = async (id: string, willAttend: string, message: str
     await client.connect()
     const db = client.db("wedding-rsvp")
     const rsvpCollection = db.collection<any>("rsvp")
+    const currentTimePST = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    }).format(new Date());
     const result = await rsvpCollection.updateOne(
       { _id: new ObjectId(id) },
       { $set: { 
         willAttend,
-        date: moment().format('LLL'),
+        date: currentTimePST,
         message,
        } },
       { upsert: false }
