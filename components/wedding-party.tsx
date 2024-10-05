@@ -53,12 +53,12 @@ const WeddingParty: FC = () => {
                   alt="Bridesmaid 3"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/rcxwd7b/tami.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
+                <h3 className="text-lg font-semibold">Tami Mediavilla</h3>
                 <p className="text-muted-foreground">Friend</p>
               </div>
             </div>
@@ -68,13 +68,13 @@ const WeddingParty: FC = () => {
                   alt="Bridesmaid 4"
                   className="object-cover"
                   height={128}
-                  src="https://generated.vusercontent.net/placeholder.svg"
+                  src="https://i.ibb.co/XjZxgP5/sophia.png"
                   width={128}
                 />
               </div>
               <div className="text-center">
-                <h3 className="text-lg font-semibold">????? ??????????</h3>
-                <p className="text-muted-foreground">Friend</p>
+                <h3 className="text-lg font-semibold">Sophia Donovan</h3>
+                <p className="text-muted-foreground">Junior Bridesmaid</p>
               </div>
             </div>
           </div>
