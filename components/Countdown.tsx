@@ -45,11 +45,11 @@ const Countdown: FC<Props> = ({ targetDate }) => {
           <div>Hours</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl">{timeLeft.minutes}</div>
+          <div className="text-4xl" suppressHydrationWarning>{timeLeft.minutes}</div>
           <div>Mins</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl">{timeLeft.seconds}</div>
+          <div className="text-4xl" suppressHydrationWarning>{timeLeft.seconds}</div>
           <div>Secs</div>
         </div>
       </div>
