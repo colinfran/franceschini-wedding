@@ -1,4 +1,4 @@
-import React, { FC, Suspense } from "react"
+import React, { FC } from "react"
 import Image from "next/image"
 import Countdown from "@/components/Countdown"
 import { YouTubeEmbed } from "@next/third-parties/google"

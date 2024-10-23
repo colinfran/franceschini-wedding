@@ -34,32 +34,32 @@ const Countdown: FC<Props> = ({ targetDate }) => {
       </div>
       <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-5">
         <div className="flex flex-col items-center">
-          <div className="text-4xl" >
-            {mounted ? timeLeft.months : <Skeleton className="w-[44px] h-[40px]"/>}
+          <div className="text-4xl">
+            {mounted ? timeLeft.months : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>Months</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" >
-            {mounted ? timeLeft.days : <Skeleton className="w-[44px] h-[40px]"/>}
+          <div className="text-4xl">
+            {mounted ? timeLeft.days : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>Days</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" >
-            {mounted ? timeLeft.hours : <Skeleton className="w-[44px] h-[40px]"/>}
+          <div className="text-4xl">
+            {mounted ? timeLeft.hours : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>Hours</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" >
-            {mounted ? timeLeft.minutes : <Skeleton className="w-[44px] h-[40px]"/>}
+          <div className="text-4xl">
+            {mounted ? timeLeft.minutes : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>Mins</div>
         </div>
         <div className="flex flex-col items-center">
           <div className="text-4xl">
-            {mounted ? timeLeft.seconds : <Skeleton className="w-[44px] h-[40px]"/>}
+            {mounted ? timeLeft.seconds : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>Secs</div>
         </div>
