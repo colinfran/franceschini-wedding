@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import React, { FC, Suspense } from "react"
 import Image from "next/image"
 import Countdown from "@/components/Countdown"
 import { YouTubeEmbed } from "@next/third-parties/google"
@@ -20,7 +20,9 @@ const Page: FC = () => {
           />
         </div>
         <div className="my-6 flex flex-col items-center justify-center">
-          <Countdown targetDate="7-13-2025" />
+          <Suspense>
+            <Countdown targetDate="7-13-2025" />
+          </Suspense>
         </div>
         <div className="relative flex items-center justify-start">
           <Image
