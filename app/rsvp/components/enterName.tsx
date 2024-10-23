@@ -65,11 +65,11 @@ const EnterName: FC<EnterNameProps> = ({
           placeholder="Last name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
-          onKeyDown={e=> {
-            if (e.key === 'Enter') {
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
               checkIfValidName()
             }
-         }}
+          }}
         />
       </div>
       <Button
