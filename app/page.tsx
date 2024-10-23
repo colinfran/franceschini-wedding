@@ -3,7 +3,7 @@ import Image from "next/image"
 import Countdown from "@/components/Countdown"
 import { YouTubeEmbed } from "@next/third-parties/google"
 
-const Page: FC = () => {
+const Page: FC = async () => {
   return (
     <div>
       <div className="m-auto grid max-w-[1480px] grid-cols-3">
@@ -20,9 +20,7 @@ const Page: FC = () => {
           />
         </div>
         <div className="my-6 flex flex-col items-center justify-center">
-          <Suspense>
-            <Countdown targetDate="7-13-2025" />
-          </Suspense>
+          <Countdown targetDate="7-13-2025" />
         </div>
         <div className="relative flex items-center justify-start">
           <Image

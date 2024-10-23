@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect, FC } from "react"
 import { calculateTimeLeft } from "@/lib/utils"
+import { Skeleton } from "./ui/skeleton"
 
 type Props = {
   targetDate: string
@@ -33,32 +34,32 @@ const Countdown: FC<Props> = ({ targetDate }) => {
       </div>
       <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-5">
         <div className="flex flex-col items-center">
-          <div className="text-4xl" suppressHydrationWarning>
-            {timeLeft.months}
+          <div className="text-4xl" >
+            {mounted ? timeLeft.months : <Skeleton className="w-[44px] h-[40px]"/>}
           </div>
           <div>Months</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" suppressHydrationWarning>
-            {timeLeft.days}
+          <div className="text-4xl" >
+            {mounted ? timeLeft.days : <Skeleton className="w-[44px] h-[40px]"/>}
           </div>
           <div>Days</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" suppressHydrationWarning>
-            {timeLeft.hours}
+          <div className="text-4xl" >
+            {mounted ? timeLeft.hours : <Skeleton className="w-[44px] h-[40px]"/>}
           </div>
           <div>Hours</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" suppressHydrationWarning>
-            {timeLeft.minutes}
+          <div className="text-4xl" >
+            {mounted ? timeLeft.minutes : <Skeleton className="w-[44px] h-[40px]"/>}
           </div>
           <div>Mins</div>
         </div>
         <div className="flex flex-col items-center">
-          <div className="text-4xl" suppressHydrationWarning>
-            {timeLeft.seconds}
+          <div className="text-4xl">
+            {mounted ? timeLeft.seconds : <Skeleton className="w-[44px] h-[40px]"/>}
           </div>
           <div>Secs</div>
         </div>
