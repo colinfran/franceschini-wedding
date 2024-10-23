@@ -47,7 +47,7 @@ const ValidName: FC<ValidNameProps> = ({
         return (
           <Button
             className="w-full"
-            key={attendee} // Ensure each button has a unique key
+            key={attendee}
             onClick={() => {
               setSelectedGuest(attendee)
               setAttendeeData(listOfGuests.find((guest) => guest.attendees.includes(attendee)))
