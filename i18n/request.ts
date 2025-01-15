@@ -5,7 +5,7 @@
  * @returns {Promise<{ locale: string, messages: any }>} An object containing the locale and the corresponding messages.
  */
 import {getRequestConfig} from 'next-intl/server';
-import {headers} from 'next/headers';
+import {headers, cookies} from 'next/headers';
 import enMessages from '../locales/en.json'; // Preload default locale messages
 import esMessages from '../locales/es.json'; // Preload other locales if common
 
@@ -15,13 +15,25 @@ const localeMessages: any = {
   // Add other preloaded locales here if necessary
 };
 
+const detectLocale = () => {
+  const acceptLanguage = headers().get('accept-language');
+  const localeCookie = cookies().get('locale')?.value;
+  let locale = localeCookie;
+  if (!locale) {
+    locale = acceptLanguage?.split(',')[0].split('-')[0] || 'en'; // Default to 'en'
+  }
+  return locale;
+}
+
 
 export default getRequestConfig(async () => {
-  const acceptLanguage = headers().get('accept-language');
-  const locale = (acceptLanguage?.split(',')[0].split('-')[0] || 'en');
+  const locale = detectLocale();
   const messages = localeMessages[locale] 
     ? localeMessages[locale] 
     : (await import(`../locales/${locale}.json`)).default;
+  if (!cookies().get('locale')) {
+    cookies().set('locale', locale, { path: '/' });
+  }
   return {
     locale,
     messages
