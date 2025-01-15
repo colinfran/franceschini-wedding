@@ -39,7 +39,6 @@ const EnterName: FC<EnterNameProps> = ({
       if (found) {
         setStatus("valid name")
         setListOfGuests(result)
-        console.log(result)
       } else {
         setStatus("invalid name")
       }

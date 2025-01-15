@@ -15,6 +15,7 @@ type Props = {
 
 const QrRsvp: FC<Props> = ({ data }) => {
   const [status, setStatus] = useState("")
+  // guests will always be defined because the data is only passed if it is valid
   const guests = data.attendee!
   const firstNameInitial = guests.attendees[0].charAt(0)
   const names = guests.attendees[0].split(" ")
