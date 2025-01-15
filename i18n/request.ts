@@ -9,13 +9,15 @@ import {headers, cookies} from 'next/headers';
 import enMessages from '../locales/en.json'; // Preload default locale messages
 import esMessages from '../locales/es.json'; // Preload other locales if common
 
-const localeMessages: any = {
+type LocaleMessages = Record<string, any>;
+
+// Preload common locales
+const localeMessages: Record<string, LocaleMessages> = {
   en: enMessages,
-  es: esMessages
-  // Add other preloaded locales here if necessary
+  es: esMessages,
 };
 
-const detectLocale = () => {
+const detectLocale = (): string => {
   const acceptLanguage = headers().get('accept-language');
   const localeCookie = cookies().get('locale')?.value;
   let locale = localeCookie;
@@ -31,9 +33,6 @@ export default getRequestConfig(async () => {
   const messages = localeMessages[locale] 
     ? localeMessages[locale] 
     : (await import(`../locales/${locale}.json`)).default;
-  if (!cookies().get('locale')) {
-    cookies().set('locale', locale, { path: '/' });
-  }
   return {
     locale,
     messages
