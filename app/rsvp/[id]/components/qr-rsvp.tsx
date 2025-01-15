@@ -8,8 +8,8 @@ import { Attendee } from "../../page"
 
 type Props = {
   data: {
-    attendee: Attendee;
-    valid: boolean;
+    attendee: Attendee
+    valid: boolean
   }
 }
 

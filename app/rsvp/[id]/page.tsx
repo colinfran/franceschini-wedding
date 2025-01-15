@@ -1,11 +1,11 @@
-import React, { FC, Suspense } from "react"
+import React, { FC } from "react"
 import { checkIfValidId } from "@/lib/server-utils"
 import QrRsvp from "./components/qr-rsvp"
 import { redirect } from "next/navigation"
 
 type Props = {
-  params: { 
-    id: string 
+  params: {
+    id: string
   }
 }
 
