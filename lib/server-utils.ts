@@ -1,3 +1,4 @@
+import { Attendee } from "@/app/rsvp/page"
 import { getAttendees } from "@/db/getAttendees"
 import { DataResponse, Guest, GuestList, RegistryItem } from "@/types"
 
@@ -62,8 +63,9 @@ export const findAssociatedAttendees = (
 
 export const checkIfValidId = async (
   id: string,
-): Promise<{ valid: boolean; attendee: Guest | undefined }> => {
+): Promise<{ valid: boolean; attendee: Attendee }> => {
   const attendees = await getAttendees()
   const attendee = attendees.guests.find((guest) => String(guest._id) === id)
-  return { valid: !!attendee, attendee: JSON.parse(JSON.stringify(attendee)) }
+  const valid = !!attendee
+  return { valid, attendee: valid ? JSON.parse(JSON.stringify(attendee)) : undefined }
 }

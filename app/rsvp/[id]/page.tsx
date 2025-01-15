@@ -4,11 +4,12 @@ import QrRsvp from "./components/qr-rsvp"
 import { redirect } from "next/navigation"
 
 type Props = {
-  params: Promise<{ id: string }>
+  params: { 
+    id: string 
+  }
 }
 
-const Page: FC<Props> = async ({ params }) => {
-  const id = (await params).id
+const Page: FC<Props> = async ({ params: { id } }) => {
   const data = await checkIfValidId(id)
   if (!data.valid) {
     redirect("/rsvp")
@@ -19,9 +20,7 @@ const Page: FC<Props> = async ({ params }) => {
         RSVP
       </h2>
       <div className="m-auto w-[325px] text-center">
-        <Suspense fallback={<div>Loading...</div>}>
-          <QrRsvp data={data} />
-        </Suspense>
+        <QrRsvp data={data} />
       </div>
     </div>
   )
