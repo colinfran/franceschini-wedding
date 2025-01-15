@@ -7,7 +7,7 @@ import UnsuccessfulSubmission from "../../components/unsuccessfullSubmission"
 
 type Props = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data: any;
+  data: any
 }
 
 const QrRsvp: FC<Props> = ({ data }) => {
