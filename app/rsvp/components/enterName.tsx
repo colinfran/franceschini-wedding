@@ -24,7 +24,7 @@ const EnterName: FC<EnterNameProps> = ({
   setListOfGuests,
 }) => {
   const [loading, setLoading] = useState<boolean>(false)
-  const t = useTranslations();
+  const t = useTranslations()
   const locale = useLocale()
 
   const checkIfValidName = async (): Promise<void> => {

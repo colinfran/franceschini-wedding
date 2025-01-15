@@ -28,7 +28,7 @@ const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 
 export const MobileNav: FC = () => {
   const pathname = usePathname()
-  const t = useTranslations();
+  const t = useTranslations()
   const [open, setOpen] = useState(false)
 
   const headerLinks = [
@@ -79,7 +79,7 @@ export const MobileNav: FC = () => {
           </div>
           <div className="page-title mb-12 mt-6 flex flex-col text-center leading-[1.43] tracking-[normal]">
             <div className="text-xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
-            {t("July 13th, 2025")}
+              {t("July 13th, 2025")}
             </div>
             <div className="text-lg">Stonetree Estate</div>
           </div>

@@ -4,13 +4,13 @@ import React, { FC, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { MobileNav } from "@/components/mobile-nav"
 import Link from "next/link"
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl"
 
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const [width, setWidth] = useState<number>(0)
-  const t = useTranslations();
+  const t = useTranslations()
 
   const headerLinks = [
     {

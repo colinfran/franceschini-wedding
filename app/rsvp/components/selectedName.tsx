@@ -57,9 +57,7 @@ const SelectedName: FC<SelectedNameProps> = ({
   }
 
   const textAreaPlaceholder =
-    attendeeData && attendeeData.attendees.length > 1
-      ? t("leaveMessageLong")
-      : t("Leave a message")
+    attendeeData && attendeeData.attendees.length > 1 ? t("leaveMessageLong") : t("Leave a message")
 
   return (
     <div className="mb-8 flex flex-col gap-4 text-center">
@@ -89,9 +87,7 @@ const SelectedName: FC<SelectedNameProps> = ({
         </div>
       )}
       {attendeeData && attendeeData.willAttend !== "no submission" && (
-        <span>
-          {t(`previousSubmitNote`)}.
-        </span>
+        <span>{t("previousSubmitNote")}.</span>
       )}
       <span>{t("Please choose an option and submit to RSVP")}!</span>
       <Select
@@ -126,9 +122,7 @@ const SelectedName: FC<SelectedNameProps> = ({
         {t("Submit")}
       </Button>
       {attendeeData && attendeeData.attendees.length > 1 && (
-        <span className="my-4">
-          {t("yourSubmission")}
-        </span>
+        <span className="my-4">{t("yourSubmission")}</span>
       )}
     </div>
   )

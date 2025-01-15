@@ -17,12 +17,8 @@ const Page: FC = async () => {
       </h2>
       <Accordion className="w-[90%] md:w-[600px] lg:w-[700px]" type="single" collapsible>
         <AccordionItem value="item-1">
-          <AccordionTrigger className="text-left">
-            {t("1-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("1-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("1-q")}</AccordionTrigger>
+          <AccordionContent>{t("1-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger className="text-left">{t("2-q")}</AccordionTrigger>
@@ -40,22 +36,14 @@ const Page: FC = async () => {
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger className="text-left">{t("3-q")}</AccordionTrigger>
-          <AccordionContent>
-            {t("3-a")}
-          </AccordionContent>
+          <AccordionContent>{t("3-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
-          <AccordionTrigger className="text-left">
-            {t("4-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("4-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("4-q")}</AccordionTrigger>
+          <AccordionContent>{t("4-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-5">
-          <AccordionTrigger className="text-left">
-            {t("5-q")}
-          </AccordionTrigger>
+          <AccordionTrigger className="text-left">{t("5-q")}</AccordionTrigger>
           <AccordionContent>
             {t("5-a")}
             <Link
@@ -69,26 +57,16 @@ const Page: FC = async () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
-          <AccordionTrigger className="text-left">
-            {t("6-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("6-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("6-q")}</AccordionTrigger>
+          <AccordionContent>{t("6-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-7">
           <AccordionTrigger className="text-left">{t("7-q")}</AccordionTrigger>
-          <AccordionContent>
-            {t("7-a")}
-          </AccordionContent>
+          <AccordionContent>{t("7-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-8">
-          <AccordionTrigger className="text-left">
-            {t("8-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("8-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("8-q")}</AccordionTrigger>
+          <AccordionContent>{t("8-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-9">
           <AccordionTrigger className="text-left">{t("9-q")}</AccordionTrigger>
@@ -102,47 +80,27 @@ const Page: FC = async () => {
         </AccordionItem>
         <AccordionItem value="item-10">
           <AccordionTrigger className="text-left">{t("10-q")}</AccordionTrigger>
-          <AccordionContent>
-            {t("10-a")}
-          </AccordionContent>
+          <AccordionContent>{t("10-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-11">
           <AccordionTrigger className="text-left">{t("11-q")}</AccordionTrigger>
-          <AccordionContent>
-            {t("11-a")}
-          </AccordionContent>
+          <AccordionContent>{t("11-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-12">
-          <AccordionTrigger className="text-left">
-            {t("12-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("12-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("12-q")}</AccordionTrigger>
+          <AccordionContent>{t("12-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-13">
-          <AccordionTrigger className="text-left">
-            {t("13-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("13-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("13-q")}</AccordionTrigger>
+          <AccordionContent>{t("13-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-14">
-          <AccordionTrigger className="text-left">
-            {t("14-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("14-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("14-q")}</AccordionTrigger>
+          <AccordionContent>{t("14-a")}</AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-15">
-          <AccordionTrigger className="text-left">
-            {t("15-q")}
-          </AccordionTrigger>
-          <AccordionContent>
-            {t("14-a")}
-          </AccordionContent>
+          <AccordionTrigger className="text-left">{t("15-q")}</AccordionTrigger>
+          <AccordionContent>{t("14-a")}</AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>

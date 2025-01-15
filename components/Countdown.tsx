@@ -2,7 +2,7 @@
 import React, { useState, useEffect, FC } from "react"
 import { calculateTimeLeft } from "@/lib/utils"
 import { Skeleton } from "./ui/skeleton"
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl"
 
 type Props = {
   targetDate: string
@@ -32,35 +32,39 @@ const Countdown: FC<Props> = ({ targetDate, locale }) => {
   return (
     <div>
       <div className="page-title mb-6 flex flex-col text-center leading-[1.43] tracking-[normal]">
-        <h2 className="text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">{t("July 13th, 2025")}</h2>
+        <h2 className="text-xl xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+          {t("July 13th, 2025")}
+        </h2>
         <h2 className="text-lg">Stonetree Estate</h2>
       </div>
-      <div className={`grid grid-cols-1 items-center gap-4 ${locale === "en" ? "md:grid-cols-5" : "md:grid-cols-[repeat(5,50px)]"}`}>
+      <div
+        className={`grid grid-cols-1 items-center gap-4 ${locale === "en" ? "md:grid-cols-5" : "md:grid-cols-[repeat(5,50px)]"}`}
+      >
         <div className="flex flex-col items-center">
           <div className="text-4xl">
             {mounted ? timeLeft.months : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>{t(timeLeft.months > 1 ? "time.Months" : "time.Month")}</div>
         </div>
-        <div className="flex flex-col items-center min-w-[fit-content]">
+        <div className="flex min-w-fit flex-col items-center">
           <div className="text-4xl">
             {mounted ? timeLeft.days : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>{t(timeLeft.days > 1 ? "time.Days" : "time.Day")}</div>
         </div>
-        <div className="flex flex-col items-center min-w-[fit-content]">
+        <div className="flex min-w-fit flex-col items-center">
           <div className="text-4xl">
             {mounted ? timeLeft.hours : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>{t(timeLeft.hours > 1 ? "time.Hours" : "time.Hour")}</div>
         </div>
-        <div className="flex flex-col items-center min-w-[fit-content]">
+        <div className="flex min-w-fit flex-col items-center">
           <div className="text-4xl">
             {mounted ? timeLeft.minutes : <Skeleton className="h-[40px] w-[44px]" />}
           </div>
           <div>{t("time.Min")}</div>
         </div>
-        <div className="flex flex-col items-center min-w-[fit-content]">
+        <div className="flex min-w-fit flex-col items-center">
           <div className="text-4xl">
             {mounted ? timeLeft.seconds : <Skeleton className="h-[40px] w-[44px]" />}
           </div>

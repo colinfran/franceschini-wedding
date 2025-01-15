@@ -21,7 +21,7 @@ const ValidName: FC<ValidNameProps> = ({
   listOfGuests,
   setStatus,
 }) => {
-  const t = useTranslations();
+  const t = useTranslations()
   const filteredAttendees = listOfGuests.flatMap((guest) =>
     guest.attendees.filter((attendee) => {
       const [firstName, ...lastNameParts] = attendee.split(" ")
@@ -42,9 +42,7 @@ const ValidName: FC<ValidNameProps> = ({
 
   return (
     <div className="mb-8 flex flex-col gap-4 text-center">
-      <span>
-        {t("selectNameMessage")}
-      </span>
+      <span>{t("selectNameMessage")}</span>
       {filteredAttendees.map((attendee) => {
         return (
           <Button

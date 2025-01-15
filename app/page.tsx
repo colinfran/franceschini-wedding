@@ -5,7 +5,7 @@ import { YouTubeEmbed } from "@next/third-parties/google"
 import { getLocale } from "next-intl/server"
 
 const Page: FC = async () => {
-  const locale = await getLocale();
+  const locale = await getLocale()
   return (
     <div>
       <div className="m-auto grid max-w-[1480px] grid-cols-3">
@@ -22,9 +22,11 @@ const Page: FC = async () => {
           />
         </div>
         <div className="my-6 flex flex-col items-center justify-center">
-          <Countdown targetDate="7-13-2025" locale={locale}/>
+          <Countdown locale={locale} targetDate="7-13-2025" />
         </div>
-        <div className={`relative flex items-center justify-start ${locale === "es" && "ml-[36px]"}`}>
+        <div
+          className={`relative flex items-center justify-start ${locale === "es" && "ml-[36px]"}`}
+        >
           <Image
             alt="profile"
             height={0}

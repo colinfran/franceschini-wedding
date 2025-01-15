@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/Header"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import Script from "next/script"
-import {NextIntlClientProvider} from 'next-intl';
+import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 
 const gaId = process.env.NEXT_PUBLIC_MEASUREMENT_ID!
@@ -17,8 +17,8 @@ type RootLayoutProps = {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
-  const locale = await getLocale();
-  const messages = await getMessages();
+  const locale = await getLocale()
+  const messages = await getMessages()
   return (
     <html lang={locale}>
       <head>
@@ -114,7 +114,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
             <Header />
             <div>{children}</div>
           </div>
-        </NextIntlClientProvider> 
+        </NextIntlClientProvider>
         <Analytics />
       </body>
       <GoogleAnalytics gaId={gaId} />

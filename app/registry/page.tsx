@@ -7,7 +7,7 @@ import Link from "next/link"
 import Imager from "@/components/Image"
 import { getRegistryData } from "@/lib/server-utils"
 import { RegistryItem } from "@/types"
-import {getTranslations} from 'next-intl/server';
+import { getTranslations } from "next-intl/server"
 
 const Page: FC = async () => {
   const t = await getTranslations()
@@ -65,14 +65,16 @@ const Page: FC = async () => {
                 <h4
                   className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
                 >
-                  {t("Price")}{": $"}
+                  {t("Price")}
+                  {": $"}
                   {item.price}
                 </h4>
               ) : (
                 <h4
                   className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
                 >
-                  {t("Still needs")}{": "}
+                  {t("Still needs")}
+                  {": "}
                   {!item.contributions.hide_contributions && item.contributions.still_needs}
                 </h4>
               )}

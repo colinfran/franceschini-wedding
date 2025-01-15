@@ -3,11 +3,7 @@ import React, { FC } from "react"
 
 const SuccessfulSubmission: FC = () => {
   const t = useTranslations()
-  return (
-    <div>
-      {t("submissionSuccess")}
-    </div>
-  )
+  return <div>{t("submissionSuccess")}</div>
 }
 
 export default SuccessfulSubmission
