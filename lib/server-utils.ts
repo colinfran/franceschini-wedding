@@ -1,3 +1,4 @@
+import { getAttendees } from "@/db/getAttendees"
 import { DataResponse, Guest, GuestList, RegistryItem } from "@/types"
 
 const registry_key = process.env.REGISTRY_LIST_KEY!
@@ -57,4 +58,12 @@ export const findAssociatedAttendees = (
 
   // Return matched guests or null if no matches
   return matchedGuests.length > 0 ? matchedGuests : null
+}
+
+export const checkIfValidId = async (
+  id: string,
+): Promise<{ valid: boolean; attendee: Guest | undefined }> => {
+  const attendees = await getAttendees()
+  const attendee = attendees.guests.find((guest) => String(guest._id) === id)
+  return { valid: !!attendee, attendee: JSON.parse(JSON.stringify(attendee)) }
 }

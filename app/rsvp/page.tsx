@@ -7,6 +7,7 @@ import InvalidName from "./components/invalidName"
 import UnsuccessfulSubmission from "./components/unsuccessfullSubmission"
 import SelectedName from "./components/selectedName"
 import EnterName from "./components/enterName"
+import SuccessfulSubmission from "./components/successfullSubmission"
 
 export type Statuses =
   | "enter name"
@@ -64,7 +65,7 @@ const Page: FC = () => {
             setStatus={setStatus}
           />
         )}
-        {status === "successfull submission" && <UnsuccessfulSubmission />}
+        {status === "successfull submission" && <SuccessfulSubmission />}
         {status === "unsuccessfull submission" && <UnsuccessfulSubmission />}
         {status === "invalid name" && <InvalidName />}
       </div>
