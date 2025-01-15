@@ -7,13 +7,15 @@ import Link from "next/link"
 import Imager from "@/components/Image"
 import { getRegistryData } from "@/lib/server-utils"
 import { RegistryItem } from "@/types"
+import {getTranslations} from 'next-intl/server';
 
 const Page: FC = async () => {
+  const t = await getTranslations()
   const registryData: RegistryItem[] = await getRegistryData()
   return (
     <div className="mx-auto flex max-w-[1450px] flex-col justify-center p-4 pt-0">
       <h2 className="mb-6 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-        Registry
+        {t("Registry")}
       </h2>
       <Button className="mb-8 w-full rounded-md bg-black text-white" asChild>
         <div className="m-auto max-w-[736px]">
@@ -22,7 +24,7 @@ const Page: FC = async () => {
             href="https://www.zola.com/registry/colinandornella"
             target="_blank"
           >
-            <ExternalLink className="mr-2 size-4" /> See our full Zola registry
+            <ExternalLink className="mr-2 size-4" /> {t("See our full Zola registry")}
           </Link>
         </div>
       </Button>
@@ -56,21 +58,21 @@ const Page: FC = async () => {
                   target="_blank"
                 >
                   <Gift className="mr-2 size-4" />
-                  {item.button_cta || "Contribute"}
+                  {t(item.button_cta) || t("Contribute")}
                 </Link>
               </Button>
               {!item.contributions.hide_contributions && item.contributions.still_needs === "1" ? (
                 <h4
                   className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
                 >
-                  Price:{" $"}
+                  {t("Price")}{": $"}
                   {item.price}
                 </h4>
               ) : (
                 <h4
                   className={`text-sm ${item.contributions.hide_contributions ? "invisible" : "visible"}`}
                 >
-                  Still needs:{" "}
+                  {t("Still needs")}{": "}
                   {!item.contributions.hide_contributions && item.contributions.still_needs}
                 </h4>
               )}

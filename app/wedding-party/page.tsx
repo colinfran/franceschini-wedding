@@ -1,7 +1,9 @@
 import React, { FC } from "react"
 import Image from "next/image"
+import { getTranslations } from "next-intl/server"
 
 const Page: FC = async () => {
+  const t = await getTranslations()
   return (
     <div className="flex justify-center">
       <section className="w-full pb-12">
@@ -9,11 +11,10 @@ const Page: FC = async () => {
           <div className="grid gap-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Meet the Bridesmaids
+                {t("Meet the Bridesmaids")}
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                These are the wonderful women who will be supporting the bride throughout her
-                wedding day.
+                {t("wonderfulWomen")}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -29,7 +30,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Courtney Lane-Donovan</h3>
-                  <p className="text-muted-foreground">Matron of Honor</p>
+                  <p className="text-muted-foreground">{t("Matron of Honor")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -44,7 +45,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Teffy Sanchez Holguin</h3>
-                  <p className="text-muted-foreground">Friend</p>
+                  <p className="text-muted-foreground">{t("friendGirl")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -59,7 +60,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Tami Mediavilla</h3>
-                  <p className="text-muted-foreground">Friend</p>
+                  <p className="text-muted-foreground">{t("friendGirl")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -74,7 +75,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Sophia Donovan</h3>
-                  <p className="text-muted-foreground">Junior Bridesmaid</p>
+                  <p className="text-muted-foreground">{t("Junior Bridesmaid")}</p>
                 </div>
               </div>
             </div>
@@ -82,11 +83,10 @@ const Page: FC = async () => {
           <div className="mt-12 grid gap-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Meet the Groomsmen
+                {t("Meet the Groomsmen")}
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                These are the fantastic men who will be standing by the groom&apos;s side as he ties
-                the knot.
+                {t("fantasticGuys")}
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -117,7 +117,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Troy Burr</h3>
-                  <p className="text-muted-foreground">Friend</p>
+                  <p className="text-muted-foreground">{t("friendBoy")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -132,7 +132,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Luke Swanson</h3>
-                  <p className="text-muted-foreground">Friend</p>
+                  <p className="text-muted-foreground">{t("friendBoy")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -147,7 +147,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Kamron Hamzehloo</h3>
-                  <p className="text-muted-foreground">Friend</p>
+                  <p className="text-muted-foreground">{t("friendBoy")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -162,7 +162,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Chris Franceschini</h3>
-                  <p className="text-muted-foreground">Brother</p>
+                  <p className="text-muted-foreground">{t("Brother")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -177,7 +177,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Tom Franceschini</h3>
-                  <p className="text-muted-foreground">Brother</p>
+                  <p className="text-muted-foreground">{t("Brother")}</p>
                 </div>
               </div>
               <div className="flex flex-col items-center gap-4">
@@ -192,7 +192,7 @@ const Page: FC = async () => {
                 </div>
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">John Franceschini</h3>
-                  <p className="text-muted-foreground">Brother</p>
+                  <p className="text-muted-foreground">{t("Brother")}</p>
                 </div>
               </div>
             </div>

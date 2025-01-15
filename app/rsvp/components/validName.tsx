@@ -2,6 +2,7 @@ import React, { FC } from "react"
 import { Button } from "@/components/ui/button"
 import { Attendee, Statuses } from "../page"
 import { Guest } from "@/types"
+import { useTranslations } from "next-intl"
 
 type ValidNameProps = {
   firstNameInitial: string
@@ -20,6 +21,7 @@ const ValidName: FC<ValidNameProps> = ({
   listOfGuests,
   setStatus,
 }) => {
+  const t = useTranslations();
   const filteredAttendees = listOfGuests.flatMap((guest) =>
     guest.attendees.filter((attendee) => {
       const [firstName, ...lastNameParts] = attendee.split(" ")
@@ -41,7 +43,7 @@ const ValidName: FC<ValidNameProps> = ({
   return (
     <div className="mb-8 flex flex-col gap-4 text-center">
       <span>
-        Select your name from the list below. If you do not see your name, refresh and try again.
+        {t("selectNameMessage")}
       </span>
       {filteredAttendees.map((attendee) => {
         return (

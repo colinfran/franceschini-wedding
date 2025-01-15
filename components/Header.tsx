@@ -4,38 +4,40 @@ import React, { FC, useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import { MobileNav } from "@/components/mobile-nav"
 import Link from "next/link"
-
-export const headerLinks = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "RSVP",
-    path: "/rsvp",
-  },
-  {
-    title: "Registry",
-    path: "/registry",
-  },
-  {
-    title: "Wedding Party",
-    path: "/wedding-party",
-  },
-  {
-    title: "Gallery",
-    path: "/gallery",
-  },
-  {
-    title: "FAQs",
-    path: "/faqs",
-  },
-]
+import { useTranslations } from 'next-intl';
 
 const Header: FC = () => {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
   const [width, setWidth] = useState<number>(0)
+  const t = useTranslations();
+
+  const headerLinks = [
+    {
+      title: t("Home"),
+      path: "/",
+    },
+    {
+      title: "RSVP",
+      path: "/rsvp",
+    },
+    {
+      title: t("Registry"),
+      path: "/registry",
+    },
+    {
+      title: t("Wedding Party"),
+      path: "/wedding-party",
+    },
+    {
+      title: t("Gallery"),
+      path: "/gallery",
+    },
+    {
+      title: t("FAQs"),
+      path: "/faqs",
+    },
+  ]
 
   const handleWindowSizeChange = (): void => {
     setWidth(window.innerWidth)
@@ -62,7 +64,7 @@ const Header: FC = () => {
   return (
     <div className={" relative mb-8"}>
       <h1 className="page-title my-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
-        <Link href="/">Colin & Ornella</Link>
+        <Link href="/">{t("Colin & Ornella")}</Link>
       </h1>
       <nav
         className={`hidden items-center justify-center gap-4 md:flex ${isOpen ? "block" : "hidden"}`}

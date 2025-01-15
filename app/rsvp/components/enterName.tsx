@@ -4,6 +4,7 @@ import React, { FC, useState } from "react"
 import { Statuses } from "../page"
 import { Guest } from "@/types"
 import { Loader2 } from "lucide-react"
+import { useLocale, useTranslations } from "next-intl"
 
 type EnterNameProps = {
   firstNameInitial: string
@@ -23,6 +24,8 @@ const EnterName: FC<EnterNameProps> = ({
   setListOfGuests,
 }) => {
   const [loading, setLoading] = useState<boolean>(false)
+  const t = useTranslations();
+  const locale = useLocale()
 
   const checkIfValidName = async (): Promise<void> => {
     setLoading(true)
@@ -53,15 +56,15 @@ const EnterName: FC<EnterNameProps> = ({
     <div className="flex flex-col gap-4">
       <div className="flex flex-row gap-2">
         <Input
-          className="w-[110px] text-base"
+          className={`${locale === "en" ? "w-[110px]" : "w-[135px]"} text-base`}
           maxLength={1}
-          placeholder="First initial"
+          placeholder={t("First initial")}
           value={firstNameInitial}
           onChange={(e) => setFirstNameInitial(e.target.value)}
         />
         <Input
           className="text-base"
-          placeholder="Last name"
+          placeholder={t("Last name")}
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           onKeyDown={(e) => {
@@ -77,7 +80,7 @@ const EnterName: FC<EnterNameProps> = ({
         onClick={checkIfValidName}
       >
         {loading && <Loader2 className="mr-2 size-4 animate-spin" />}
-        Submit
+        {t("Submit")}
       </Button>
     </div>
   )

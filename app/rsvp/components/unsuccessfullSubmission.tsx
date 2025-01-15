@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl"
 import React, { FC } from "react"
 
 const UnsuccessfulSubmission: FC = () => {
-  return <div>There was an issue submitting. Refresh and try again.</div>
+  const t = useTranslations()
+  return <div>{t("submissionIssue")}</div>
 }
 
 export default UnsuccessfulSubmission

@@ -2,8 +2,8 @@ import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import React, { FC, SVGProps, useState } from "react"
-import { headerLinks } from "./Header"
 import { usePathname } from "next/navigation"
+import { useTranslations } from "next-intl"
 
 const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
   return (
@@ -28,8 +28,35 @@ const MenuIcon: FC<SVGProps<SVGSVGElement>> = (props) => {
 
 export const MobileNav: FC = () => {
   const pathname = usePathname()
-
+  const t = useTranslations();
   const [open, setOpen] = useState(false)
+
+  const headerLinks = [
+    {
+      title: t("Home"),
+      path: "/",
+    },
+    {
+      title: "RSVP",
+      path: "/rsvp",
+    },
+    {
+      title: t("Registry"),
+      path: "/registry",
+    },
+    {
+      title: t("Wedding Party"),
+      path: "/wedding-party",
+    },
+    {
+      title: t("Gallery"),
+      path: "/gallery",
+    },
+    {
+      title: t("FAQs"),
+      path: "/faqs",
+    },
+  ]
 
   const handleLinkClick = (path: string): void => {
     if (pathname === path) {
@@ -48,11 +75,11 @@ export const MobileNav: FC = () => {
         </SheetTrigger>
         <SheetContent className="w-full max-w-xs bg-background p-6" side="right">
           <div className="page-title mt-12 text-center text-xl uppercase leading-[1.43] tracking-[normal] xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
-            <Link href="/">Colin & Ornella</Link>
+            <Link href="/">{t("Colin & Ornella")}</Link>
           </div>
           <div className="page-title mb-12 mt-6 flex flex-col text-center leading-[1.43] tracking-[normal]">
             <div className="text-xl xs:text-2xl sm:text-2xl md:text-4xl lg:text-5xl">
-              July 13th, 2025
+            {t("July 13th, 2025")}
             </div>
             <div className="text-lg">Stonetree Estate</div>
           </div>

@@ -8,6 +8,7 @@ import UnsuccessfulSubmission from "./components/unsuccessfullSubmission"
 import SelectedName from "./components/selectedName"
 import EnterName from "./components/enterName"
 import SuccessfulSubmission from "./components/successfullSubmission"
+import { useLocale } from "next-intl"
 
 export type Statuses =
   | "enter name"

@@ -1,12 +1,13 @@
 "use client"
 import React, { FC, useEffect, useState } from "react"
 import Gallery from "@/components/Gallery"
+import { useTranslations } from "next-intl"
 // import Gallery from "react-photo-gallery";
 
 const Page: FC = () => {
   const [loading, setLoading] = useState(true)
   const [images, setImages] = useState([])
-
+  const t = useTranslations()
   useEffect(() => {
     const getData = async (): Promise<void> => {
       try {
@@ -31,7 +32,7 @@ const Page: FC = () => {
   return (
     <div>
       <h2 className="my-6 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-        Gallery
+        {t("Gallery")}
       </h2>
       <div className="flex justify-center p-2">
         {loading ? (

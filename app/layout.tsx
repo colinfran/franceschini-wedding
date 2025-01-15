@@ -5,6 +5,9 @@ import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/Header"
 import { GoogleAnalytics } from "@next/third-parties/google"
 import Script from "next/script"
+import {NextIntlClientProvider} from 'next-intl';
+import { getLocale, getMessages } from "next-intl/server"
+
 const gaId = process.env.NEXT_PUBLIC_MEASUREMENT_ID!
 
 const inter = Inter({ subsets: ["latin"] })
@@ -14,8 +17,10 @@ type RootLayoutProps = {
 }
 
 const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <link href="/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
         <link href="/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
@@ -104,10 +109,12 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
         </Script>
       </head>
       <body className={inter.className}>
-        <div>
-          <Header />
-          <div>{children}</div>
-        </div>
+        <NextIntlClientProvider messages={messages}>
+          <div>
+            <Header />
+            <div>{children}</div>
+          </div>
+        </NextIntlClientProvider> 
         <Analytics />
       </body>
       <GoogleAnalytics gaId={gaId} />

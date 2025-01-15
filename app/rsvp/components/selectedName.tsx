@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Loader2 } from "lucide-react"
 import uniqid from "uniqid"
 import { Attendee, Statuses } from "../page"
+import { useLocale, useTranslations } from "next-intl"
 
 type SelectedNameProps = {
   selectedGuest: string
@@ -30,7 +31,8 @@ const SelectedName: FC<SelectedNameProps> = ({
   const [loading, setLoading] = useState<boolean>(false)
   const [isAttending, setIsAttending] = useState<string>("Select attendance")
   const [message, setMessage] = useState<string>("")
-
+  const locale = useLocale()
+  const t = useTranslations()
   const submitAttendance = async (): Promise<void> => {
     setLoading(true)
     try {
@@ -56,15 +58,15 @@ const SelectedName: FC<SelectedNameProps> = ({
 
   const textAreaPlaceholder =
     attendeeData && attendeeData.attendees.length > 1
-      ? "If someone in your party can't attend, please specify here. Or leave a message."
-      : "Leave a message."
+      ? t("leaveMessageLong")
+      : t("Leave a message")
 
   return (
     <div className="mb-8 flex flex-col gap-4 text-center">
-      <span>{`Hey ${selectedGuest}!`}</span>
+      <span>{`${locale === "en" ? "Hey" : "Hola"} ${selectedGuest}!`}</span>
       {attendeeData && attendeeData.attendees.length > 1 && (
         <div>
-          <span>Your additional guests are:</span>
+          <span>{`${t("Your additional guests are")}:`}</span>
           <ul className="list-inside list-disc [&>li]:mt-2">
             {attendeeData.attendees
               .filter((el) => {
@@ -88,11 +90,10 @@ const SelectedName: FC<SelectedNameProps> = ({
       )}
       {attendeeData && attendeeData.willAttend !== "no submission" && (
         <span>
-          Note that you previously submitted your attendance. Submitting again will overwrite the
-          last submission.
+          {t(`previousSubmitNote`)}.
         </span>
       )}
-      <span>{"Please choose an option and submit to RSVP!"}</span>
+      <span>{t("Please choose an option and submit to RSVP")}!</span>
       <Select
         value={isAttending}
         onValueChange={(value) => {
@@ -106,8 +107,8 @@ const SelectedName: FC<SelectedNameProps> = ({
           className="text-base"
           ref={(ref) => ref?.addEventListener("touchend", (e) => e.preventDefault())}
         >
-          <SelectItem value="yes">Yes, I am attending.</SelectItem>
-          <SelectItem value="no">No, I am unable to attend.</SelectItem>
+          <SelectItem value="yes">{t("yesAttending")}.</SelectItem>
+          <SelectItem value="no">{t("notAttending")}.</SelectItem>
         </SelectContent>
       </Select>
       <Textarea
@@ -122,12 +123,11 @@ const SelectedName: FC<SelectedNameProps> = ({
         onClick={submitAttendance}
       >
         {loading && <Loader2 className="mr-2 size-4 animate-spin" />}
-        Submit
+        {t("Submit")}
       </Button>
       {attendeeData && attendeeData.attendees.length > 1 && (
         <span className="my-4">
-          Your submission will be applied to both you and your guests unless specified in the above
-          text field.
+          {t("yourSubmission")}
         </span>
       )}
     </div>
