@@ -74,6 +74,7 @@ const Header: FC = () => {
             className={`${boldPath(item.path)} block px-2 py-1 text-black hover:underline md:py-0`}
             href={item.path}
             key={item.path}
+            prefetch
             onClick={() => {
               if (pathname === item.path) {
                 window.location.reload()

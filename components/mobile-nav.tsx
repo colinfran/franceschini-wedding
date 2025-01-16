@@ -89,7 +89,7 @@ export const MobileNav: FC = () => {
                 className="flex items-center gap-2 text-lg font-medium text-foreground hover:underline"
                 href={item.path}
                 key={item.path}
-                prefetch={false}
+                prefetch
                 onClick={() => handleLinkClick(item.path)}
               >
                 {item.title}
