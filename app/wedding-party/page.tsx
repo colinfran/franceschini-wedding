@@ -24,7 +24,7 @@ const Page: FC = async () => {
                     alt="Bridesmaid 1"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/rkv5PrY/courtney.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWJroWMmOPOc2vEVB6Dw7Le9rdS0nmFxkHhUpg"
                     width={128}
                   />
                 </div>
@@ -39,7 +39,7 @@ const Page: FC = async () => {
                     alt="Bridesmaid 2"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/0y4WbG3/teffy.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWjRMh3BRlZipV93QIqtao5OYXGhrMdvEz82fF"
                     width={128}
                   />
                 </div>
@@ -54,7 +54,7 @@ const Page: FC = async () => {
                     alt="Bridesmaid 3"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/rcxwd7b/tami.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWduiKb560qGArE9Q3284k6KDTelYwRpW5JIZV"
                     width={128}
                   />
                 </div>
@@ -69,7 +69,7 @@ const Page: FC = async () => {
                     alt="Bridesmaid 4"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/XjZxgP5/sophia.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWrvpV0eZZMA5wGF4JgN2PXBV1vjTe93nOoi0l"
                     width={128}
                   />
                 </div>
@@ -96,7 +96,7 @@ const Page: FC = async () => {
                     alt="Groomsman 1"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/Wt8CGsT/jaycob.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW51sFukrKJCsUKOW1nAHX4wjGEVZlNpyvfIet"
                     width={128}
                   />
                 </div>
@@ -111,7 +111,7 @@ const Page: FC = async () => {
                     alt="Groomsman 2"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/TtWqy3z/troy.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWsD45UKdTrcXSTDHoCphK08uIwRg2WJZvQzxt"
                     width={128}
                   />
                 </div>
@@ -126,7 +126,7 @@ const Page: FC = async () => {
                     alt="Groomsman 3"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/TcPWvqv/luke.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW2XDTRhC6KyhRLwOzA89TDVpnWEF127lvsa4i"
                     width={128}
                   />
                 </div>
@@ -141,7 +141,7 @@ const Page: FC = async () => {
                     alt="Groomsman 4"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/NVpkVPc/kam.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWaTXlCt5BimsrWyDVnothlJPSLGXbwAC85FOE"
                     width={128}
                   />
                 </div>
@@ -156,7 +156,7 @@ const Page: FC = async () => {
                     alt="Groomsman 5"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/6Zd9shM/chris.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWH2xIPEgzd5PesZim7ISCpR0LWtxGjOzJ3VFo"
                     width={128}
                   />
                 </div>
@@ -171,7 +171,7 @@ const Page: FC = async () => {
                     alt="Groomsman 6"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/kGrpBJb/tom.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWCFJKWSYjQxp12wvOHErSY5BLIqZ4PuCdGXAs"
                     width={128}
                   />
                 </div>
@@ -186,7 +186,7 @@ const Page: FC = async () => {
                     alt="Groomsman 7"
                     className="object-cover"
                     height={128}
-                    src="https://i.ibb.co/4sNS77g/john.png"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW3cic2zLNdUESBF8eAolItbPMGT5hmps2DOKQ"
                     width={128}
                   />
                 </div>

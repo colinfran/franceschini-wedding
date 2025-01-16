@@ -1,7 +1,6 @@
 import createNextIntlPlugin from 'next-intl/plugin';
  
 const withNextIntl = createNextIntlPlugin();
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
@@ -16,6 +15,11 @@ const nextConfig = {
   reactStrictMode: false,
   images: {
     remotePatterns: [
+      {
+        protocol: "https",
+        hostname: `${process.env.UPLOADTHING_PROJECT_ID}.ufs.sh`,
+        pathname: "/f/*",
+      },
       {
         protocol: "https",
         hostname: "i.ibb.co",
