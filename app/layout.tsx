@@ -68,7 +68,10 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
           property="og:description"
         />
         <meta content="https://franceschini.wedding" property="og:url" />
-        <meta content="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW5rjdnSKJCsUKOW1nAHX4wjGEVZlNpyvfIetg" property="og:image" />
+        <meta
+          content="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW5rjdnSKJCsUKOW1nAHX4wjGEVZlNpyvfIetg"
+          property="og:image"
+        />
 
         {/* Twitter Card Meta Tags */}
         <meta content="summary_large_image" name="twitter:card" />
@@ -77,7 +80,10 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
           name="twitter:title"
         />
         <meta content="Colin and Orne are getting married!" name="twitter:description" />
-        <meta content="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW5rjdnSKJCsUKOW1nAHX4wjGEVZlNpyvfIetg" name="twitter:image" />
+        <meta
+          content="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW5rjdnSKJCsUKOW1nAHX4wjGEVZlNpyvfIetg"
+          name="twitter:image"
+        />
         <meta
           content="Colin & Orne sharing champagne to celebrate their engagement"
           property="twitter:image:alt"
