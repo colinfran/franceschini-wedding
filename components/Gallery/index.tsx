@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 import React, { useState, useLayoutEffect, useRef, CSSProperties, ReactNode } from "react"
 import ResizeObserver from "resize-observer-polyfill"
