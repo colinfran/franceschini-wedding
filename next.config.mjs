@@ -17,28 +17,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: `${process.env.UPLOADTHING_PROJECT_ID}.ufs.sh`,
-        pathname: "/f/*",
-      },
-      {
-        protocol: "https",
-        hostname: "i.ibb.co",
-      },
-      {
-        protocol: "https",
-        hostname: "images.zola.com",
-      },
-      {
-        protocol: "https",
-        hostname: "*.cloudfront.net"
-      },
-      {
-        protocol: "https",
-        hostname: "*.media-amazon.com"
-      },
-      {
-        protocol: "https",
-        hostname: "ucarecdn.com"
+        hostname: "**",
       },
     ],
   },
