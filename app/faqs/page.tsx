@@ -100,7 +100,7 @@ const Page: FC = async () => {
         </AccordionItem>
         <AccordionItem value="item-15">
           <AccordionTrigger className="text-left">{t("15-q")}</AccordionTrigger>
-          <AccordionContent>{t("14-a")}</AccordionContent>
+          <AccordionContent>{t("15-a")}</AccordionContent>
         </AccordionItem>
       </Accordion>
     </div>

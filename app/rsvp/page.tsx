@@ -69,6 +69,11 @@ const Page: FC = () => {
         {status === "unsuccessfull submission" && <UnsuccessfulSubmission />}
         {status === "invalid name" && <InvalidName />}
       </div>
+      {status === "enter name" && (
+        <div className="mt-8 m-auto w-[325px] text-center">
+          <div>If you are having trouble RSVPing, please reach out to Colin and Ornella at thefranwedding@gmail.com</div>
+        </div>
+      )}
     </div>
   )
 }
