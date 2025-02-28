@@ -34,6 +34,10 @@ const Header: FC = () => {
       path: "/gallery",
     },
     {
+      title: t("Hotel"),
+      path: "/hotel",
+    },
+    {
       title: t("FAQs"),
       path: "/faqs",
     },

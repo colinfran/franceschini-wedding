@@ -58,7 +58,15 @@ const Page: FC = async () => {
         </AccordionItem>
         <AccordionItem value="item-6">
           <AccordionTrigger className="text-left">{t("6-q")}</AccordionTrigger>
-          <AccordionContent>{t("6-a")}</AccordionContent>
+          <AccordionContent>
+            {t("6-a")}
+            <Link
+              className="inline-flex items-center font-medium text-blue-600 hover:underline dark:text-blue-500"
+              href="/hotel"
+            >
+              {t("here")}.
+            </Link>
+          </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-7">
           <AccordionTrigger className="text-left">{t("7-q")}</AccordionTrigger>
