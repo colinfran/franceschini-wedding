@@ -1,12 +1,5 @@
 import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@radix-ui/react-select"
 import { Calendar, Car, Dumbbell, MapPin, Phone, Utensils, Wifi } from "lucide-react"
 import { getTranslations } from "next-intl/server"
@@ -26,6 +19,9 @@ const Page: FC = async () => {
           <p className="mx-auto max-w-2xl text-gray-600">
             {`We have reserved a block of 15 rooms for our wedding guests at the Courtyard Novato.
             Below, you'll find all the information you need to book your stay.`}
+          </p>
+          <p className="mx-auto max-w-2xl pt-4 text-gray-600">
+            {"*NOTE: To get the special rates, you must book by the two ways listed below."}
           </p>
         </header>
 
@@ -58,8 +54,9 @@ const Page: FC = async () => {
             <CardDescription className="mt-2 flex items-center gap-2">
               <Phone className="size-5 shrink-0" />
               <a className="hover:underline" href="tel:+14158838950">
-                (415) 883-8950
+                {"1 (415) 883-8950"}
               </a>
+              <span>{"(Do not call this number for reservations)"}</span>
             </CardDescription>
           </CardHeader>
 
@@ -82,13 +79,21 @@ const Page: FC = async () => {
               <h3 className="mb-3 text-lg font-medium">How to Book</h3>
               <ul className="list-disc space-y-2 pl-7 text-gray-700">
                 <li>
-                  <span className="font-medium">Online:</span> [Provide a booking link, if
-                  available]
+                  <span className="font-medium">{"Online: "}</span>
+                  {"Must use "}
+                  <span>
+                    <form action="/api/hotel-link" className="inline" method="POST">
+                      <Button className="p-0" variant="link">
+                        {"this link"}
+                      </Button>
+                    </form>
+                    {" to receive the special rate."}
+                  </span>
                 </li>
                 <li>
-                  <span className="font-medium">Phone:</span> Call the hotel at (415) 883-8950 and
-                  mention the
-                  <span className="font-medium"> Franceschini Wedding</span> to receive the special
+                  <span className="font-medium">{"Phone: "}</span>
+                  {"Call the hotel at (415) 883-8950 and mention the "}
+                  <span className="font-medium">{"Orne & Colins' Wedding"}</span> to receive the special
                   rate.
                 </li>
               </ul>
@@ -515,19 +520,10 @@ const Page: FC = async () => {
                 >
                   9 minutes
                 </Link>
-                {" from Wedgewood Weddings Stonetree."}
+                {" Stonetree Estate."}
               </p>
             </div>
           </CardContent>
-
-          <CardFooter className="flex flex-col justify-center gap-4 bg-gray-50 py-6 sm:flex-row">
-            <Button className="" size="lg">
-              Book Online
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-              <a href="tel:+14158838950">Call to Book: (415) 883-8950</a>
-            </Button>
-          </CardFooter>
         </Card>
         <footer className="my-12 text-center text-sm text-gray-500">
           <p>
