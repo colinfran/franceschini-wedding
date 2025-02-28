@@ -93,8 +93,8 @@ const Page: FC = async () => {
                 <li>
                   <span className="font-medium">{"Phone: "}</span>
                   {"Call the hotel at (415) 883-8950 and mention the "}
-                  <span className="font-medium">{"Orne & Colins' Wedding"}</span> to receive the special
-                  rate.
+                  <span className="font-medium">{"Orne & Colins' Wedding"}</span> to receive the
+                  special rate.
                 </li>
               </ul>
             </div>
