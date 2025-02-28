@@ -518,7 +518,7 @@ const Page: FC = async () => {
                   className="underline hover:text-black"
                   href="https://maps.app.goo.gl/h9GU9dDBbNq4ernz5"
                 >
-                  9 minutes
+                  8 minutes
                 </Link>
                 {" Stonetree Estate."}
               </p>
