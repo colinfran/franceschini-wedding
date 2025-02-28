@@ -44,11 +44,13 @@ const Page: FC = async () => {
             <CardTitle className="font-serif text-2xl">Courtyard Novato Marin/Sonoma</CardTitle>
             <CardDescription className="mt-2 flex items-start gap-2">
               <MapPin className="mt-0.5 size-5  shrink-0" />
-              <span>
-                1400 N Hamilton Parkway,
-                <br />
-                Novato, CA 94949
-              </span>
+              <Link href="https://www.google.com/maps/place/Courtyard+Novato+Marin%2FSonoma/@37.962904,-122.6731505,10z/data=!4m21!1m11!3m10!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!2sCourtyard+Novato+Marin%2FSonoma!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!10e1!16s%2Fg%2F1v9lb_q0!3m8!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!16s%2Fg%2F1v9lb_q0?entry=ttu&g_ep=EgoyMDI1MDIyNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" className="hover:underline">
+                <span>
+                  1400 N Hamilton Parkway,
+                  <br />
+                  Novato, CA 94949
+                </span>
+              </Link>
             </CardDescription>
             <CardDescription className="mt-2 flex items-center gap-2">
               <Phone className="size-5 shrink-0" />
