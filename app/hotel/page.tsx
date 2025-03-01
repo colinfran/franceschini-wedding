@@ -21,7 +21,7 @@ const Page: FC = async () => {
             Below, you'll find all the information you need to book your stay.`}
           </p>
           <p className="mx-auto max-w-2xl pt-4 text-gray-600">
-            {"*NOTE: To get the special rates, you must book by the two ways listed below."}
+            {"*NOTE: To get the special rates, you must book by one of the two ways listed below."}
           </p>
         </header>
 
