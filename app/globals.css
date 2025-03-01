@@ -167,3 +167,7 @@
   height: 500px;
   max-width: 100%;
 }
+
+.video-width video, media-theme-sutro{
+  max-height: 500px;
+}

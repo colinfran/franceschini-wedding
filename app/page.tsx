@@ -1,8 +1,8 @@
 import React, { FC } from "react"
 import Image from "next/image"
 import Countdown from "@/components/Countdown"
-import { YouTubeEmbed } from "@next/third-parties/google"
 import { getLocale } from "next-intl/server"
+import VideoPlayer from "@/components/VideoPlayer"
 
 const Page: FC = async () => {
   const locale = await getLocale()
@@ -38,12 +38,13 @@ const Page: FC = async () => {
           />
         </div>
       </div>
-      <div className="youtube-container m-auto my-20 max-w-[1000px]">
+      {/* <div className="youtube-container m-auto my-20 max-w-[1000px]">
         <YouTubeEmbed
           videoid="NCcRc7sAOTo"
           // height={500}
         />
-      </div>
+      </div> */}
+      <VideoPlayer />
     </div>
   )
 }
