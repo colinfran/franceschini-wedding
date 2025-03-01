@@ -7,7 +7,6 @@ const VideoPlayer: FC = () => {
       <Video
         className="w-full max-w-lg"
         src="https://2xnbgz8473.ufs.sh/f/8xJfnpQsLChAchmho3wTlfkxeBIMgrntpPDjJuysYqQSGKhw"
-        suppressHydrationWarning={true}
       />
     </div>
   )
