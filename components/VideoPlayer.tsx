@@ -7,7 +7,7 @@ const VideoPlayer: FC = () => {
     <div className="flex justify-center">
       <video
         className="w-full max-w-xs"
-        src="https://2xnbgz8473.ufs.sh/f/8xJfnpQsLChAchmho3wTlfkxeBIMgrntpPDjJuysYqQSGKhw"
+        src="https://2xnbgz8473.ufs.sh/f/8xJfnpQsLChA7Hma02hVMF9Td0KwYWlmfeO47b5UGhz2DPug"
       />
     </div>
   )
