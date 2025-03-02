@@ -1,1 +1,1 @@
-export { GET } from "@/next-video.mjs"
+export { GET, POST } from "next-video/request-handler"
