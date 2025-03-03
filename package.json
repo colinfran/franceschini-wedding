@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev & npx next-video sync -w",
-    "build": "mkdir -p videos && next build",
+    "build": "mkdir -p videos && npx next-video sync && next build",
     "sitemap": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
