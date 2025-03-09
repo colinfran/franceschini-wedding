@@ -1,7 +1,6 @@
 import React, { FC } from "react"
 // import Video from "next-video"
-import Player from 'next-video/player';
-
+import Player from "next-video/player"
 
 const VideoPlayer: FC = () => {
   return (
