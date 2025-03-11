@@ -32,7 +32,7 @@ export default getRequestConfig(async () => {
   const locale = detectLocale();
   const messages = localeMessages[locale] 
     ? localeMessages[locale] 
-    : (await import(`../locales/${locale}.json`)).default;
+    : localeMessages["en"] // Default to 'en' if locale messages are not found
   return {
     locale,
     messages
