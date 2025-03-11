@@ -38,12 +38,6 @@ const Page: FC = async () => {
           />
         </div>
       </div>
-      {/* <div className="youtube-container m-auto my-20 max-w-[1000px]">
-        <YouTubeEmbed
-          videoid="NCcRc7sAOTo"
-          // height={500}
-        />
-      </div> */}
       <VideoPlayer />
     </div>
   )
