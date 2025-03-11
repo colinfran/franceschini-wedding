@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & npx next-video sync -w",
-    "build": "mkdir -p videos && npx next-video sync && next build",
+    "dev": "next dev",
+    "build": "next build",
     "sitemap": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
