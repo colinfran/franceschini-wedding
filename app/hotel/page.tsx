@@ -527,7 +527,9 @@ const Page: FC = async () => {
         </Card>
         <footer className="my-12 text-center text-sm text-gray-500">
           <p>
-            {"If you have any questions about accommodations, please don't hesitate to contact us at thefranwedding@gmail.com."}
+            {
+              "If you have any questions about accommodations, please don't hesitate to contact us at thefranwedding@gmail.com."
+            }
           </p>
         </footer>
       </div>
