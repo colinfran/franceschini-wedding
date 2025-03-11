@@ -1,6 +1,5 @@
 "use client"
 import React, { FC, useEffect, useRef } from "react"
-// import Video from "next-video"
 import Player from "next-video/player"
 
 const VideoPlayer: FC = () => {
