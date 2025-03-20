@@ -108,7 +108,7 @@ const SelectedName: FC<SelectedNameProps> = ({
         </SelectContent>
       </Select>
       <Textarea
-        className="mt-4 min-h-[100px] text-base"
+        className="mt-4 min-h-[120px] text-base"
         placeholder={textAreaPlaceholder}
         value={message}
         onChange={(e) => setMessage(e.target.value)}
