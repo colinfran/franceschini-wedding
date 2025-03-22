@@ -9,7 +9,7 @@ const Page: FC = async () => {
   return (
     <div>
       <div className="flex justify-center py-6">
-        <Image src="/colin-ornella.jpg" alt="Colin and Ornella" width={300} height={400} />
+        <Image alt="Colin and Ornella" height={400} src="/colin-ornella.jpg" width={300} />
       </div>
       <div className="m-auto grid max-w-[1480px] grid-cols-3 pb-6">
         <div className={`relative flex items-center justify-end ${locale === "es" && "mr-[36px]"}`}>
