@@ -34,7 +34,7 @@ export const findAssociatedAttendees = (
 
   for (const guest of guestList.guests) {
     for (const fullName of guest.attendees) {
-      const nameParts = fullName.split(" ")
+      const nameParts = fullName.toLowerCase().split(" ")
       const firstName = nameParts[0]
       const restOfName = nameParts.slice(1) // Everything after the first name
 

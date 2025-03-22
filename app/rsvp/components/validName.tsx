@@ -25,16 +25,16 @@ const ValidName: FC<ValidNameProps> = ({
   const filteredAttendees = listOfGuests.flatMap((guest) =>
     guest.attendees.filter((attendee) => {
       const [firstName, ...lastNameParts] = attendee.split(" ")
-      const lastNameFull = lastNameParts.join(" ") // Join remaining parts as the full last name
+      const lastNameFull = lastNameParts.join(" ").toLowerCase() // Join remaining parts as the full last name
 
       // Check if the first name's initial matches
-      const isFirstNameMatch = firstName.charAt(0) === firstNameInitial
+      const isFirstNameMatch = firstName.toLowerCase().charAt(0) === firstNameInitial.toLowerCase()
 
       // Split the last name into parts for checking
       const lastNameSearchParts = lastName.split(" ")
 
       // Check if any part of the last name matches
-      const isLastNameMatch = lastNameSearchParts.every((part) => lastNameFull.includes(part))
+      const isLastNameMatch = lastNameSearchParts.every((part) => lastNameFull.includes(part.toLowerCase()))
 
       return isFirstNameMatch && isLastNameMatch // Return true if both conditions are satisfied
     }),

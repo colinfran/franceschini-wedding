@@ -35,11 +35,13 @@ const EnterName: FC<EnterNameProps> = ({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ firstNameInitial, lastName }),
+        body: JSON.stringify({ firstNameInitial: firstNameInitial.toLowerCase(), lastName: lastName.toLowerCase() }),
       })
       const { found, result, error } = await response.json()
+      console.log("here",{ found, result, error })
       if (error) throw Error("An error occured.")
       if (found) {
+        console.log("found and setting status to valid name")
         setStatus("valid name")
         setListOfGuests(result)
       } else {
