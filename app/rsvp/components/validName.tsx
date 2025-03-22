@@ -34,7 +34,9 @@ const ValidName: FC<ValidNameProps> = ({
       const lastNameSearchParts = lastName.split(" ")
 
       // Check if any part of the last name matches
-      const isLastNameMatch = lastNameSearchParts.every((part) => lastNameFull.includes(part.toLowerCase()))
+      const isLastNameMatch = lastNameSearchParts.every((part) =>
+        lastNameFull.includes(part.toLowerCase()),
+      )
 
       return isFirstNameMatch && isLastNameMatch // Return true if both conditions are satisfied
     }),
