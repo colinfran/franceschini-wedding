@@ -8,7 +8,10 @@ const Page: FC = async () => {
   const locale = await getLocale()
   return (
     <div>
-      <div className="m-auto grid max-w-[1480px] grid-cols-3">
+      <div className="flex justify-center py-6">
+        <Image src="/colin-ornella.jpg" alt="Colin and Ornella" width={300} height={400} />
+      </div>
+      <div className="m-auto grid max-w-[1480px] grid-cols-3 pb-6">
         <div className={`relative flex items-center justify-end ${locale === "es" && "mr-[36px]"}`}>
           <Image
             alt="profile"
