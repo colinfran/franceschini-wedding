@@ -37,7 +37,7 @@ const EnterName: FC<EnterNameProps> = ({
         },
         body: JSON.stringify({
           firstNameInitial: firstNameInitial.toLowerCase(),
-          lastName: lastName.toLowerCase(),
+          lastName: lastName.toLowerCase().replace(/’/g, "'"),
         }),
       })
       const { found, result, error } = await response.json()
