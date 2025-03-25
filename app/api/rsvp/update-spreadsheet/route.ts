@@ -18,7 +18,7 @@ export async function POST(): Promise<NextResponse> {
       item.willAttend,
       item.date,
       item.message,
-      item.attendees.length
+      item.attendees.length,
     ])
     const headers = ["Names", "Will Attend", "Submission Date", "Message", "Num Attendees"]
     const formattedData = [headers, ...dataRows]
