@@ -101,7 +101,7 @@ const SelectedName: FC<SelectedNameProps> = ({
         </SelectTrigger>
         <SelectContent
           className="text-base"
-          ref={(ref) => ref?.addEventListener("touchend", (e) => e.preventDefault())}
+          // ref={(ref) => ref?.addEventListener("touchend", (e) => e.preventDefault())}
         >
           <SelectItem value="yes">{t("yesAttending")}.</SelectItem>
           <SelectItem value="no">{t("notAttending")}.</SelectItem>
