@@ -75,7 +75,7 @@ const SelectedName: FC<SelectedNameProps> = ({
                 const isFirstNameMatch = firstName.charAt(0) === firstNameInitial
 
                 // Check if the last name matches (this can allow for partial matches if needed)
-                const isLastNameMatch = lastNameFull.includes(lastName)
+                const isLastNameMatch = lastNameFull.replace(/’/, "'").includes(lastName.replace(/’/, "'"))
 
                 // We want to keep attendees who do NOT match both conditions
                 return !(isFirstNameMatch && isLastNameMatch)
