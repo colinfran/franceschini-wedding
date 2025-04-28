@@ -90,18 +90,48 @@ const Page: FC = async () => {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-              <div className="flex flex-col items-center gap-4">
+            <div className="flex flex-col items-center gap-4">
                 <div className="size-32 overflow-hidden rounded-full bg-slate-100">
                   <Image
-                    alt="Groomsman 1"
+                    alt="Groomsman 5"
                     className="object-cover"
                     height={128}
-                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW51sFukrKJCsUKOW1nAHX4wjGEVZlNpyvfIet"
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWH2xIPEgzd5PesZim7ISCpR0LWtxGjOzJ3VFo"
                     width={128}
                   />
                 </div>
                 <div className="text-center">
-                  <h3 className="text-lg font-semibold">Jaycob Barros</h3>
+                  <h3 className="text-lg font-semibold">Chris Franceschini</h3>
+                  <p className="text-muted-foreground">Best Man</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <div className="size-32 overflow-hidden rounded-full bg-slate-100">
+                  <Image
+                    alt="Groomsman 6"
+                    className="object-cover"
+                    height={128}
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWCFJKWSYjQxp12wvOHErSY5BLIqZ4PuCdGXAs"
+                    width={128}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">Tom Franceschini</h3>
+                  <p className="text-muted-foreground">Best Man</p>
+                </div>
+              </div>
+              <div className="flex flex-col items-center gap-4">
+                <div className="size-32 overflow-hidden rounded-full bg-slate-100">
+                  <Image
+                    alt="Groomsman 7"
+                    className="object-cover"
+                    height={128}
+                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW3cic2zLNdUESBF8eAolItbPMGT5hmps2DOKQ"
+                    width={128}
+                  />
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold">John Franceschini</h3>
                   <p className="text-muted-foreground">Best Man</p>
                 </div>
               </div>
@@ -148,51 +178,6 @@ const Page: FC = async () => {
                 <div className="text-center">
                   <h3 className="text-lg font-semibold">Kamron Hamzehloo</h3>
                   <p className="text-muted-foreground">{t("friendBoy")}</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-4">
-                <div className="size-32 overflow-hidden rounded-full bg-slate-100">
-                  <Image
-                    alt="Groomsman 5"
-                    className="object-cover"
-                    height={128}
-                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWH2xIPEgzd5PesZim7ISCpR0LWtxGjOzJ3VFo"
-                    width={128}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Chris Franceschini</h3>
-                  <p className="text-muted-foreground">{t("Brother")}</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-4">
-                <div className="size-32 overflow-hidden rounded-full bg-slate-100">
-                  <Image
-                    alt="Groomsman 6"
-                    className="object-cover"
-                    height={128}
-                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBWCFJKWSYjQxp12wvOHErSY5BLIqZ4PuCdGXAs"
-                    width={128}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">Tom Franceschini</h3>
-                  <p className="text-muted-foreground">{t("Brother")}</p>
-                </div>
-              </div>
-              <div className="flex flex-col items-center gap-4">
-                <div className="size-32 overflow-hidden rounded-full bg-slate-100">
-                  <Image
-                    alt="Groomsman 7"
-                    className="object-cover"
-                    height={128}
-                    src="https://offdf4hlrt.ufs.sh/f/6m6EU73MglBW3cic2zLNdUESBF8eAolItbPMGT5hmps2DOKQ"
-                    width={128}
-                  />
-                </div>
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold">John Franceschini</h3>
-                  <p className="text-muted-foreground">{t("Brother")}</p>
                 </div>
               </div>
             </div>
