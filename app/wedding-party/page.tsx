@@ -90,7 +90,7 @@ const Page: FC = async () => {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            <div className="flex flex-col items-center gap-4">
+              <div className="flex flex-col items-center gap-4">
                 <div className="size-32 overflow-hidden rounded-full bg-slate-100">
                   <Image
                     alt="Groomsman 5"
