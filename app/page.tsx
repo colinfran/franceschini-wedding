@@ -25,7 +25,7 @@ const Page: FC = async () => {
           />
         </div>
         <div className="my-6 flex flex-col items-center justify-center">
-          <Countdown locale={locale} targetDate="7-13-2025" />
+          <Countdown locale={locale} targetDate="2025-07-13T17:00:00-07:00" />
         </div>
         <div
           className={`relative flex items-center justify-start ${locale === "es" && "ml-[36px]"}`}

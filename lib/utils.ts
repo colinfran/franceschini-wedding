@@ -25,7 +25,7 @@ export const fetchImageAsBase64 = async (url: string): Promise<string> => {
 
 export const calculateTimeLeft = (targetDate: string): CalculateProps => {
   const now = moment()
-  const target = moment(targetDate, "MM-DD-YYYY")
+  const target = moment(targetDate)
   const duration = moment.duration(target.diff(now))
 
   return {
