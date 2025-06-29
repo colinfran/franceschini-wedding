@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { Buffer } from "buffer"
-import moment from "moment"
+import moment from "moment-timezone"
 import { CalculateProps } from "@/types"
 
 export const cn = (...inputs: ClassValue[]): string => {
@@ -24,8 +24,8 @@ export const fetchImageAsBase64 = async (url: string): Promise<string> => {
 }
 
 export const calculateTimeLeft = (targetDate: string): CalculateProps => {
-  const now = moment()
-  const target = moment(targetDate)
+  const now = moment.tz("America/Los_Angeles")
+  const target = moment.tz("2025-07-13 17:00", "America/Los_Angeles")
   const duration = moment.duration(target.diff(now))
 
   return {
