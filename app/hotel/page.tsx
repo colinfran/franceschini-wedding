@@ -8,7 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
 
-
 const Page: FC = () => {
   const [show, setShow] = useState<boolean>(false)
   const t = useTranslations()
@@ -19,11 +18,13 @@ const Page: FC = () => {
           <h2 className="my-6 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             {t("Hotel")}
           </h2>
-          <p className="mx-auto max-w-2xl text-gray-600 pb-4">
+          <p className="mx-auto max-w-2xl pb-4 text-gray-600">
             {"UPDATE: The hotel block is no longer available."}
           </p>
 
-          <Button onClick={()=> setShow(!show)}>{show ? "Hide" : "I understand, show hotel info anyways."}</Button>
+          <Button onClick={() => setShow(!show)}>
+            {show ? "Hide" : "I understand, show hotel info anyways."}
+          </Button>
           {show && (
             <div className="mt-4">
               <p className="mx-auto max-w-2xl text-gray-600">
@@ -31,101 +32,104 @@ const Page: FC = () => {
                 Below, you'll find all the information you need to book your stay.`}
               </p>
               <p className="mx-auto max-w-2xl pt-4 text-gray-600">
-                {"*NOTE: To get the special rates, you must book by one of the two ways listed below."}
+                {
+                  "*NOTE: To get the special rates, you must book by one of the two ways listed below."
+                }
               </p>
             </div>
           )}
         </header>
-          {
-            show && (
-              <div>
-                <Card className="overflow-hidden shadow-lg">
-                  <div className="relative h-64 min-h-[400px] w-full">
-                    <Image
-                      alt="Courtyard Novato Hotel"
-                      className="object-cover"
-                      src="https://www.visitmarin.org/site/assets/files/10756/49210-2.jpg"
-                      fill
-                      priority
-                    />
-                  </div>
+        {show && (
+          <div>
+            <Card className="overflow-hidden shadow-lg">
+              <div className="relative h-64 min-h-[400px] w-full">
+                <Image
+                  alt="Courtyard Novato Hotel"
+                  className="object-cover"
+                  src="https://www.visitmarin.org/site/assets/files/10756/49210-2.jpg"
+                  fill
+                  priority
+                />
+              </div>
 
-                  <CardHeader>
-                    <CardTitle className="font-serif text-2xl">Courtyard Novato Marin/Sonoma</CardTitle>
-                    <CardDescription className="mt-2 flex items-start gap-2">
-                      <MapPin className="mt-0.5 size-5  shrink-0" />
-                      <Link
-                        className="hover:underline"
-                        href="https://www.google.com/maps/place/Courtyard+Novato+Marin%2FSonoma/@37.962904,-122.6731505,10z/data=!4m21!1m11!3m10!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!2sCourtyard+Novato+Marin%2FSonoma!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!10e1!16s%2Fg%2F1v9lb_q0!3m8!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!16s%2Fg%2F1v9lb_q0?entry=ttu&g_ep=EgoyMDI1MDIyNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
-                      >
-                        <span>
-                          1400 N Hamilton Parkway,
-                          <br />
-                          Novato, CA 94949
-                        </span>
-                      </Link>
-                    </CardDescription>
-                    <CardDescription className="mt-2 flex items-center gap-2">
-                      <Phone className="size-5 shrink-0" />
-                      <a className="hover:underline" href="tel:+14158838950">
-                        {"1 (415) 883-8950"}
-                      </a>
-                      <span>{"(Do not call this number for reservations)"}</span>
-                    </CardDescription>
-                  </CardHeader>
+              <CardHeader>
+                <CardTitle className="font-serif text-2xl">Courtyard Novato Marin/Sonoma</CardTitle>
+                <CardDescription className="mt-2 flex items-start gap-2">
+                  <MapPin className="mt-0.5 size-5  shrink-0" />
+                  <Link
+                    className="hover:underline"
+                    href="https://www.google.com/maps/place/Courtyard+Novato+Marin%2FSonoma/@37.962904,-122.6731505,10z/data=!4m21!1m11!3m10!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!2sCourtyard+Novato+Marin%2FSonoma!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!10e1!16s%2Fg%2F1v9lb_q0!3m8!1s0x8085a2c9f4f1eacd:0xb65b9fb91c520c19!5m2!4m1!1i2!8m2!3d38.0619319!4d-122.5314685!16s%2Fg%2F1v9lb_q0?entry=ttu&g_ep=EgoyMDI1MDIyNi4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D"
+                  >
+                    <span>
+                      1400 N Hamilton Parkway,
+                      <br />
+                      Novato, CA 94949
+                    </span>
+                  </Link>
+                </CardDescription>
+                <CardDescription className="mt-2 flex items-center gap-2">
+                  <Phone className="size-5 shrink-0" />
+                  <a className="hover:underline" href="tel:+14158838950">
+                    {"1 (415) 883-8950"}
+                  </a>
+                  <span>{"(Do not call this number for reservations)"}</span>
+                </CardDescription>
+              </CardHeader>
 
-                  <CardContent className="space-y-6">
-                    <div>
-                      <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
-                        <Calendar className="size-5 " />
-                        Room Block Information
-                      </h3>
-                      <ul className="list-disc space-y-2 pl-7 text-gray-700">
-                        <li>We have reserved a block of 15 rooms for our guests.</li>
-                        <li>The special room rate is available for the nights of July 11th - July 13th.</li>
-                        <li>The last day to book at this rate is June 20th, 2025.</li>
-                      </ul>
+              <CardContent className="space-y-6">
+                <div>
+                  <h3 className="mb-3 flex items-center gap-2 text-lg font-medium">
+                    <Calendar className="size-5 " />
+                    Room Block Information
+                  </h3>
+                  <ul className="list-disc space-y-2 pl-7 text-gray-700">
+                    <li>We have reserved a block of 15 rooms for our guests.</li>
+                    <li>
+                      The special room rate is available for the nights of July 11th - July 13th.
+                    </li>
+                    <li>The last day to book at this rate is June 20th, 2025.</li>
+                  </ul>
+                </div>
+
+                <Separator />
+
+                <div>
+                  <h3 className="mb-3 text-lg font-medium">How to Book</h3>
+                  <ul className="list-disc space-y-2 pl-7 text-gray-700">
+                    <li>
+                      <span className="font-medium">{"Online: "}</span>
+                      {"Must use "}
+                      <span>
+                        <form action="/api/hotel-link" className="inline" method="POST">
+                          <Button className="p-0" variant="link">
+                            {"this link"}
+                          </Button>
+                        </form>
+                        {" to receive the special rate."}
+                      </span>
+                    </li>
+                    <li>
+                      <span className="font-medium">{"Phone: "}</span>
+                      {"Call the hotel at (415) 883-8950 and mention the "}
+                      <span className="font-medium">{"Orne & Colins' Wedding"}</span> to receive the
+                      special rate.
+                    </li>
+                  </ul>
+                </div>
+
+                <Separator />
+
+                <div>
+                  <h3 className="mb-3 text-lg font-medium">Hotel Amenities</h3>
+                  <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+                    <div className="flex items-center gap-2">
+                      <Wifi className="size-5 " />
+                      <span>Free Wi-Fi</span>
                     </div>
-
-                    <Separator />
-
-                    <div>
-                      <h3 className="mb-3 text-lg font-medium">How to Book</h3>
-                      <ul className="list-disc space-y-2 pl-7 text-gray-700">
-                        <li>
-                          <span className="font-medium">{"Online: "}</span>
-                          {"Must use "}
-                          <span>
-                            <form action="/api/hotel-link" className="inline" method="POST">
-                              <Button className="p-0" variant="link">
-                                {"this link"}
-                              </Button>
-                            </form>
-                            {" to receive the special rate."}
-                          </span>
-                        </li>
-                        <li>
-                          <span className="font-medium">{"Phone: "}</span>
-                          {"Call the hotel at (415) 883-8950 and mention the "}
-                          <span className="font-medium">{"Orne & Colins' Wedding"}</span> to receive the
-                          special rate.
-                        </li>
-                      </ul>
-                    </div>
-
-                    <Separator />
-
-                    <div>
-                      <h3 className="mb-3 text-lg font-medium">Hotel Amenities</h3>
-                      <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
-                        <div className="flex items-center gap-2">
-                          <Wifi className="size-5 " />
-                          <span>Free Wi-Fi</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <svg className="size-5" viewBox="0 0 2134 2134" width="100%">
-                            <path
-                              d="
+                    <div className="flex items-center gap-2">
+                      <svg className="size-5" viewBox="0 0 2134 2134" width="100%">
+                        <path
+                          d="
                             M1267.711914,794.288147 
                               C1339.346802,865.985596 1410.482422,937.182190 1481.597046,1008.399841 
                               C1482.036011,1008.839355 1482.182739,1009.570862 1482.794434,1010.856567 
@@ -154,12 +158,12 @@ const Page: FC = () => {
                               C872.994690,405.034637 908.080139,434.485046 940.655579,467.136230 
                               C1049.397095,576.130615 1158.343872,684.920166 1267.711914,794.288147 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="2px"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="2px"
+                        />
+                        <path
+                          d="
                             M215.698090,1688.000000 
                               C215.697968,1669.715698 215.697968,1652.431396 215.697968,1635.060547 
                               C229.325104,1632.730103 242.374710,1630.919189 255.235764,1628.212402 
@@ -204,12 +208,12 @@ const Page: FC = () => {
                               C216.564484,1770.473389 216.194855,1770.195557 216.193054,1769.933838 
                               C216.009232,1742.955933 215.854584,1715.978027 215.698090,1688.000000 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="2px"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="2px"
+                        />
+                        <path
+                          d="
                             M1018.142151,1353.917969 
                               C986.373352,1361.213501 958.471619,1374.607666 933.048035,1393.693604 
                               C898.130676,1419.906982 858.631775,1435.166626 815.091125,1437.833862 
@@ -253,12 +257,12 @@ const Page: FC = () => {
                               C1177.949219,1367.537231 1138.661255,1354.332520 1096.203003,1349.919189 
                               C1070.214111,1347.217773 1044.501831,1348.226562 1018.142151,1353.917969 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="2px"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="2px"
+                        />
+                        <path
+                          d="
                             M1291.149292,606.696106 
                               C1278.901123,581.956848 1271.674683,556.782654 1269.440308,529.771057 
                               C1263.992432,463.913666 1284.106445,407.780548 1331.617920,361.985657 
@@ -270,25 +274,25 @@ const Page: FC = () => {
                               C1465.941284,719.870972 1420.752441,713.398071 1378.096680,691.748596 
                               C1340.557129,672.695923 1311.653564,644.426880 1291.149292,606.696106 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="2px"
-                            />
-                          </svg>
-                          <span>Outdoor Pool</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Dumbbell className="size-5 " />
-                          <span>Fitness Center</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Utensils className="size-5 " />
-                          <span>Restaurant</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <svg className="size-5" viewBox="0 0 500 499" width="100%">
-                            <path
-                              d="M423.000000,500.000000 
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="2px"
+                        />
+                      </svg>
+                      <span>Outdoor Pool</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Dumbbell className="size-5 " />
+                      <span>Fitness Center</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Utensils className="size-5 " />
+                      <span>Restaurant</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <svg className="size-5" viewBox="0 0 500 499" width="100%">
+                        <path
+                          d="M423.000000,500.000000 
                               C296.645782,500.000000 170.291550,500.000000 43.354649,499.704468 
                               C42.514656,499.605988 42.257332,499.803009 42.000004,500.000000 
                               C41.555553,500.000000 41.111111,500.000000 40.705456,499.754333 
@@ -415,12 +419,12 @@ const Page: FC = () => {
                               C264.360046,119.352638 251.042267,124.625137 237.268021,130.011017 
                               C244.040909,139.995834 252.460541,147.070267 263.620850,152.061844 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M392.625183,467.838745 
                               C392.248718,466.394897 392.120026,464.736725 392.119720,463.078522 
                               C392.103851,377.886200 392.098846,292.693878 392.092712,207.501556 
@@ -433,12 +437,12 @@ const Page: FC = () => {
                               C393.920166,296.024231 393.928619,378.451904 393.879486,460.879547 
                               C393.878143,463.128021 393.262238,465.376129 392.625183,467.838745 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M136.395721,270.762756 
                               C136.183151,250.045578 136.260696,229.075287 136.336395,208.104996 
                               C136.342941,206.291092 136.337280,204.477158 136.337280,202.291443 
@@ -452,12 +456,12 @@ const Page: FC = () => {
                               C137.896805,227.924683 138.038727,245.891876 137.934982,263.856903 
                               C137.922150,266.076813 137.121140,268.292206 136.395721,270.762756 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M44.349201,394.050415 
                               C48.080597,394.140930 51.996689,394.940826 55.914009,394.946899 
                               C112.297813,395.034393 168.681793,395.015106 225.529022,395.097076 
@@ -465,90 +469,89 @@ const Page: FC = () => {
                               C163.600021,396.005219 107.555748,396.015442 51.511642,395.928284 
                               C49.185127,395.924652 46.860157,394.925812 44.349201,394.050415 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M422.609344,207.355942 
                               C422.846344,227.684235 422.906830,248.384689 422.880249,269.547516 
                               C422.532410,268.720398 422.047668,267.431396 422.044647,266.141296 
                               C422.000732,247.487701 422.016388,228.833954 422.043976,210.180267 
                               C422.045166,209.362686 422.297516,208.545486 422.609344,207.355942 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M385.161133,469.723358 
                               C387.016663,469.326172 389.067596,469.207092 391.557587,469.036133 
                               C389.783264,469.323273 387.569885,469.662384 385.161133,469.723358 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M278.030334,469.641785 
                               C278.420837,469.372711 278.891693,469.306305 279.707336,469.344788 
                               C279.404938,469.581268 278.757843,469.712830 278.030334,469.641785 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                            <path
-                              d="
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                        <path
+                          d="
                             M275.125427,469.088593 
                               C275.097290,468.949310 275.525482,469.104462 275.702087,469.246094 
                               C275.878662,469.387726 275.483063,469.465668 275.483063,469.465668 
                               C275.483063,469.465668 275.153534,469.227875 275.125427,469.088593 
                             z"
-                              fill="#000"
-                              opacity="1.000000"
-                              stroke="none"
-                            />
-                          </svg>
-                          <span>Laundry Services</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Car className="size-5 " />
-                          <span>Free Parking</span>
-                        </div>
-                      </div>
+                          fill="#000"
+                          opacity="1.000000"
+                          stroke="none"
+                        />
+                      </svg>
+                      <span>Laundry Services</span>
                     </div>
-
-                    <Separator />
-
-                    <div>
-                      <h3 className="mb-2 text-lg font-medium">Distance from Venue</h3>
-                      <p className="text-gray-700">
-                        {"The hotel is approximately "}
-                        <Link
-                          className="underline hover:text-black"
-                          href="https://maps.app.goo.gl/h9GU9dDBbNq4ernz5"
-                        >
-                          8 minutes
-                        </Link>
-                        {" from Stonetree Estate."}
-                      </p>
+                    <div className="flex items-center gap-2">
+                      <Car className="size-5 " />
+                      <span>Free Parking</span>
                     </div>
-                  </CardContent>
-                </Card>
-                <footer className="my-12 text-center text-sm text-gray-500">
-                  <p>
-                    {
-                      "If you have any questions about accommodations, please don't hesitate to contact us at thefranwedding@gmail.com."
-                    }
+                  </div>
+                </div>
+
+                <Separator />
+
+                <div>
+                  <h3 className="mb-2 text-lg font-medium">Distance from Venue</h3>
+                  <p className="text-gray-700">
+                    {"The hotel is approximately "}
+                    <Link
+                      className="underline hover:text-black"
+                      href="https://maps.app.goo.gl/h9GU9dDBbNq4ernz5"
+                    >
+                      8 minutes
+                    </Link>
+                    {" from Stonetree Estate."}
                   </p>
-                </footer>
-              </div>
-            )
-          }
+                </div>
+              </CardContent>
+            </Card>
+            <footer className="my-12 text-center text-sm text-gray-500">
+              <p>
+                {
+                  "If you have any questions about accommodations, please don't hesitate to contact us at thefranwedding@gmail.com."
+                }
+              </p>
+            </footer>
+          </div>
+        )}
       </div>
     </div>
   )
