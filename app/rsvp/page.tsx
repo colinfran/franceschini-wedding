@@ -39,7 +39,8 @@ const Page: FC = () => {
       <div className="m-auto w-[325px] text-center">
         {status === "ended" && (
           <div>
-            The RSVP period has ended. If you have any questions, please reach out to Colin and Ornella.
+            The RSVP period has ended. If you have any questions, please reach out to Colin and
+            Ornella.
           </div>
         )}
         {status === "enter name" && (
