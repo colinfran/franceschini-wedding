@@ -1,33 +1,26 @@
 "use client"
-import React, { useState, useEffect, FC } from "react"
-import { calculateTimeLeft } from "@/lib/utils"
-import { Skeleton } from "./ui/skeleton"
+import React, { FC } from "react"
 import { useTranslations } from "next-intl"
 
-type Props = {
-  targetDate: string
-  locale: string
-}
-
-const Countdown: FC<Props> = ({ targetDate, locale }) => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
-  const [mounted, setMounted] = useState(false)
+const Countdown: FC = () => {
+  // const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate))
+  // const [mounted, setMounted] = useState(false)
   const t = useTranslations()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  // useEffect(() => {
+  //   setMounted(true)
+  // }, [])
 
-  useEffect(() => {
-    if (mounted) {
-      setTimeLeft(calculateTimeLeft(targetDate)) // Update once on mount
-      const timer = setInterval(() => {
-        setTimeLeft(calculateTimeLeft(targetDate))
-      }, 1000)
+  // useEffect(() => {
+  //   if (mounted) {
+  //     setTimeLeft(calculateTimeLeft(targetDate)) // Update once on mount
+  //     const timer = setInterval(() => {
+  //       setTimeLeft(calculateTimeLeft(targetDate))
+  //     }, 1000)
 
-      return () => clearInterval(timer)
-    }
-  }, [mounted, targetDate])
+  //     return () => clearInterval(timer)
+  //   }
+  // }, [mounted, targetDate])
 
   return (
     <div>
@@ -36,8 +29,9 @@ const Countdown: FC<Props> = ({ targetDate, locale }) => {
           {t("July 13th, 2025")}
         </h2>
         <h2 className="text-lg">Stonetree Estate</h2>
+        <h2 className="text-sm">5:00PM</h2>
       </div>
-      <div
+      {/*<div
         className={`grid grid-cols-1 items-center gap-4 ${locale === "en" ? "md:grid-cols-5" : "md:grid-cols-[repeat(5,50px)]"}`}
       >
         <div className="flex flex-col items-center">
@@ -70,7 +64,7 @@ const Countdown: FC<Props> = ({ targetDate, locale }) => {
           </div>
           <div>{t("time.Sec")}</div>
         </div>
-      </div>
+      </div>*/}
     </div>
   )
 }
