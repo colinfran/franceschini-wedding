@@ -26,6 +26,17 @@ export const fetchImageAsBase64 = async (url: string): Promise<string> => {
 export const calculateTimeLeft = (targetDate: string): CalculateProps => {
   const now = moment.tz("America/Los_Angeles")
   const target = moment.tz("2025-07-13 17:00", "America/Los_Angeles")
+
+  if (now.isAfter(target)) {
+    return {
+      months: 0,
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    }
+  }
+  
   const duration = moment.duration(target.diff(now))
 
   return {
