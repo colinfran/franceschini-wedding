@@ -16,6 +16,7 @@ export type Statuses =
   | "successfull submission"
   | "unsuccessfull submission"
   | "selected name"
+  | "ended"
 
 export type Attendee = Guest | undefined
 
@@ -23,7 +24,7 @@ const Page: FC = () => {
   const [firstNameInitial, setFirstNameInitial] = useState<string>("")
   const [lastName, setLastName] = useState<string>("")
 
-  const [status, setStatus] = useState<Statuses>("enter name")
+  const [status, setStatus] = useState<Statuses>("ended")
 
   const [listOfGuests, setListOfGuests] = useState<Guest[]>([])
   const [attendeeData, setAttendeeData] = useState<Attendee>(undefined)
@@ -36,6 +37,11 @@ const Page: FC = () => {
         RSVP
       </h2>
       <div className="m-auto w-[325px] text-center">
+        {status === "ended" && (
+          <div>
+            The RSVP period has ended. If you have any questions, please reach out to Colin and Ornella.
+          </div>
+        )}
         {status === "enter name" && (
           <EnterName
             firstNameInitial={firstNameInitial}
