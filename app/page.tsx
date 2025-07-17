@@ -41,9 +41,7 @@ const Page: FC = async () => {
           />
         </div>
       </div>
-      <div className="relative flex items-center justify-center">
-        Engagement video
-      </div>
+      <div className="relative flex items-center justify-center">Engagement video</div>
       <VideoPlayer />
     </div>
   )
