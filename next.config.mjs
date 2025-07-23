@@ -8,7 +8,7 @@ const nextConfig = {
     return [
       {
         source: "/photoboothpics",
-        destination: "https://www.dropbox.com/scl/fo/57u0ru4djco3ev5sfqhkf/APAfGdlabiYZcWq8FB92OwI?rlkey=ytsejiw23o600xlnowlsghnum&st=v77vauh9&dl=0",
+        destination: "https://www.dropbox.com/scl/fo/h7a7yfi3w6rtbsy3qx96v/AD7OuUMZIyDclLNTM5j9koI?rlkey=2sye3ollvld7cs9hlfbgcv92p&st=tc65gnhl&dl=0",
         permanent: true,
       },
       {
